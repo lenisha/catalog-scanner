@@ -36,6 +36,7 @@ info: catalog_scanner.DataCatalogResultsScanner[0]
       Found classifications in table mssql://srv.database.windows.net/testae/dbo/data3
        --- Column  mssql://srv.database.windows.net/testae/dbo/data3#hhh --- Classification SECURITY.COMMON_PASSWORDS
        --- Column  mssql://srv.database.windows.net/testae/dbo/data3#numero%20d%27assurance%20sociale --- Classification GOVERNMENT.CANADA.SOCIAL_INSURANCE_NUMBER
+```
 
 ## Run as Kubernetes CronJob
 To run this job periodically use Kubernetes CronJob  `k8sjob.yaml` definition
