@@ -81,7 +81,7 @@ when running, see job defined and completed runs
  kubectl get cronjobs
 NAME         SCHEDULE      SUSPEND   ACTIVE   LAST SCHEDULE   AGE
 catalogscanner   * */1 * * *   False     0        26s             6m31s
-
+```
 
 ## Onboard DataSource
 
