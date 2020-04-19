@@ -9,6 +9,9 @@ spec:
       completions: 1  #at least one success
       backoffLimit: 3 #retries
       template:
+        metadata:
+          labels:
+            aadpodidbinding: odbcidentity
         spec:
           containers:
           - name: catalogscanner

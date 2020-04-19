@@ -108,8 +108,18 @@ namespace catalog_scanner
             _Logger.LogDebug("\n Result:\n {0}", JsonConvert.SerializeObject(body, Formatting.Indented));
         }
 
-        private  string getToken()
+        private string getToken()
         {
+            Boolean useMI = _Config.GetValue<Boolean>("UseMI");
+
+            if (useMI)
+                return getMIToken();
+            else
+                return getSPToken();
+        }
+
+        private string getSPToken() 
+        { 
             string clientId = _Config.GetValue<String>("ClientId");
             string clientSecret = _Config.GetValue<String>("ClientSecret");
             string tenantId = _Config.GetValue<String>("TenantId");
@@ -127,6 +137,22 @@ namespace catalog_scanner
             var content = new FormUrlEncodedContent(values);
             HttpClient authClient = new HttpClient();
             var bearerResult = authClient.PostAsync(loginUrl, content);
+            bearerResult.Wait();
+            var resultContent = bearerResult.Result.Content.ReadAsStringAsync();
+            resultContent.Wait();
+            var bearerToken =
+            JObject.Parse(resultContent.Result)["access_token"].ToString();
+
+            return bearerToken;
+        }
+
+        private string getMIToken()
+        {
+            string miUrl = @"http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https://management.core.windows.net";
+
+            HttpClient authClient = new HttpClient();
+           
+            var bearerResult = authClient.GetAsync(miUrl);
             bearerResult.Wait();
             var resultContent = bearerResult.Result.Content.ReadAsStringAsync();
             resultContent.Wait();

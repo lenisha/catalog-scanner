@@ -14,7 +14,15 @@ To run locally , set `appsettings.json` configuration with details for Service P
   "SqlServer": "<sql server>.database.windows.net"
 }
 ```
-Add SP to DataCatalog Contributors
+
+## Managed Identity
+if running in K8S with AAD Pod Identity enabled
+
+```
+"UseMI": "true",
+```
+
+Add SP  or MI App Id to DataCatalog Contributors
 ![docs](./docs/sp.png)
 
 
@@ -57,6 +65,9 @@ spec:
       completions: 1  #at least one success
       backoffLimit: 3 #retries
       template:
+        metadata:
+          labels:
+            aadpodidbinding: odbcidentity
         spec:
           containers:
           - name: catalogscanner
