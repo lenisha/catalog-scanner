@@ -22,7 +22,7 @@ namespace DataCatalogGen2.Models
         /// <summary>
         /// Initializes a new instance of the JsonSearchFilter class.
         /// </summary>
-        public JsonSearchFilter()
+        public JsonSearchFilter(object p)
         {
             CustomInit();
         }

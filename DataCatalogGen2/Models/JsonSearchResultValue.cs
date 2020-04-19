@@ -45,7 +45,7 @@ namespace DataCatalogGen2.Models
         /// <param name="qualifiedName">The qualified name of the
         /// record.</param>
         /// <param name="typeName">The type name of the record.</param>
-        public JsonSearchResultValue(IList<JsonSearchHighlights> searchhighlights = default(IList<JsonSearchHighlights>), double? searchscore = default(double?), string description = default(string), string id = default(string), string name = default(string), string owner = default(string), string qualifiedName = default(string), string typeName = default(string))
+        public JsonSearchResultValue(JsonSearchHighlights searchhighlights, double? searchscore = default(double?), string description = default(string), string id = default(string), string name = default(string), string owner = default(string), string qualifiedName = default(string), string typeName = default(string), IList<string> allClassifications = default(IList<string>) )
         {
             Searchhighlights = searchhighlights;
             Searchscore = searchscore;
@@ -55,6 +55,7 @@ namespace DataCatalogGen2.Models
             Owner = owner;
             QualifiedName = qualifiedName;
             TypeName = typeName;
+            AllClassifications = allClassifications;
             CustomInit();
         }
 
@@ -71,7 +72,7 @@ namespace DataCatalogGen2.Models
         /// list.
         /// </summary>
         [JsonProperty(PropertyName = "@search.highlights")]
-        public IList<JsonSearchHighlights> Searchhighlights { get; set; }
+        public JsonSearchHighlights Searchhighlights { get; set; }
 
         /// <summary>
         /// Gets or sets the search score calculated by Azure Search. The
@@ -116,5 +117,7 @@ namespace DataCatalogGen2.Models
         [JsonProperty(PropertyName = "typeName")]
         public string TypeName { get; set; }
 
+        [JsonProperty(PropertyName = "allClassifications")]
+        public IList<string> AllClassifications { get; set; }
     }
 }

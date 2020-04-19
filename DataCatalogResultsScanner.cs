@@ -28,24 +28,84 @@ namespace catalog_scanner
 
         public void Run()
         {
-            // Get token and set auth
+
+            Dictionary<string, string> tableguids = getAllClassifiedTablesAtServer();
+            foreach (var table  in tableguids) 
+            {
+                Dictionary<string, string> columns = getClassifiedColumns(table.Value);
+                _Logger.LogInformation("Found classifications in table {0}", table.Key);
+                foreach (var column in columns) {
+                    _Logger.LogInformation(" --- Column  {0} --- Classification {1}", column.Key, column.Value);
+                }
+            }
+
+        }
+
+        private DataCatalogClient getDCClient() 
+        {
+            // Get DC client with token
             var svcClientCreds = new TokenCredentials(getToken(), "Bearer");
             var client = new DataCatalogClient(svcClientCreds);
             // Overwrite base URI if needed
             client.BaseUri = new System.Uri(BASE_URI);
-            // /v2/entity/guid/{guid}
-            var task = client.EntityREST.GetByIdWithHttpMessagesAsync("97c36ab1-016f-f099-63d1-042f71e6de81");
-            task.Wait();
+            return client;
+        }
 
-            _Logger.LogInformation("\nURI:\n {0}", task.Result.Request.RequestUri);
-            _Logger.LogInformation("\nStatus Code:\n {0}", task.Result.Response.StatusCode);
-            printResultBody(task.Result.Body);
+        private Dictionary<string,string> getAllClassifiedTablesAtServer()
+        {
+            var client = getDCClient();
+            string sqlServer = _Config.GetValue<String>("SqlServer");
 
+            // Get SQL Tables with all classificatuions that are on the server
+            JsonSearchParameters p2 = new JsonSearchParameters();
+            p2.IncludeSubTypes = true;
+            p2.TypeName = "azure_sql_table";
+            p2.IncludeClassificationAttributes = true;
+            p2.IncludeSubClassifications = true;
+            
+            // Get tables request
+            JsonSearchRequest req = new JsonSearchRequest(sqlServer, null, null, p2);
+            JsonAdvancedResult results = client.DiscoveryREST.SearchAdvanced(req);
+
+            _Logger.LogDebug("Found tables {0}", results.Searchcount);
+
+            Dictionary<string, string> tableguids = new Dictionary<string, string>();
+            foreach (var table in results.Value ) {
+                if ( table.AllClassifications != null &&  table.AllClassifications.Count > 0 )
+                    tableguids.Add(table.QualifiedName, table.Id);
+            }
+
+            _Logger.LogDebug("Found tables with classifications {0}", tableguids.Count);
+            return tableguids;
+        }
+
+        private Dictionary<string,string> getClassifiedColumns(string tableguid)
+        {
+            // find columns in this table by guid
+            var client = getDCClient();
+            JsonAtlasEntityWithExtInfo dbinfo = client.EntityREST.GetById(tableguid);
+
+            // only get columns with classififcations attached to them
+            Dictionary<string, string> classifiedcolumns = new Dictionary<string, string>();
+            foreach (var column in dbinfo.ReferredEntities.Values) 
+            {
+                if (column.Classifications != null && column.Classifications.Count > 0)
+                {
+                    // name
+                    object qName;
+                    column.Attributes.TryGetValue("qualifiedName",out qName);
+                    // classifications    
+                    string classifications = column.Classifications[0].TypeName; // TODO: iterate over all
+                    classifiedcolumns.Add(qName as string, classifications);
+                }
+            }
+            _Logger.LogDebug("Found classified columns {0} in table {1}", classifiedcolumns.Count, tableguid);
+            return classifiedcolumns;
         }
 
         private  void printResultBody(Object body)
         {
-            _Logger.LogInformation("\n Result:\n {0}", JsonConvert.SerializeObject(body, Formatting.Indented));
+            _Logger.LogDebug("\n Result:\n {0}", JsonConvert.SerializeObject(body, Formatting.Indented));
         }
 
         private  string getToken()
