@@ -1,0 +1,86 @@
+{
+    "parameters": {
+        "searchRequest": {
+            "filter": {
+                "and": [
+                    {
+                        "typeName": "azure_blob_path"
+                    },
+                    {
+                        "attributeName": "qualifiedName",
+                        "operator": "contains",
+                        "attributeValue": "mycompany"
+                    },
+                    {
+                        "or": [
+                            {
+                                "attributeName": "name",
+                                "operator": "eq",
+                                "attributeValue": "DepartmentInfo.txt"
+                            },
+                            {
+                                "attributeName": "name",
+                                "operator": "startswith",
+                                "attributeValue": "Vendor"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    },
+    "responses": {
+        "200": {
+            "headers": {
+                "Access-Control-Allow-Headers": "authorization,content-type,x-xsrf-header,x-ms-client-request-id",
+                "Access-Control-Allow-Methods": "GET,OPTIONS,HEAD,PUT,POST,DELETE,PATCH",
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Expose-Headers": "x-ms-request-id",
+                "Content-Type": "application/json; charset=UTF-8",
+                "Server": "Jetty(9.3.14.v20161028)",
+                "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+                "Transfer-Encoding": "chunked",
+                "X-Content-Type-Options": "nosniff",
+                "X-Frame-Options": "DENY",
+                "x-ms-request-id": "97930d08-0a53-4bb5-a352-08e7761bf20a",
+                "X-XSS-Protection": "1; mode=block"
+            },
+            "body": {
+                "@search.count": 2,
+                "value": [
+                    {
+                        "@search.score": 1,
+                        "@search.highlights": {
+                            "qualifiedName": [
+                                "https://mycompanyaccount.blob.core.windows.net/<em>mycompany</em>/Sales/DepartmentInfo.txt"
+                            ]
+                        },
+                        "description": null,
+                        "id": "9786008f-e4fd-a1ff-e44e-e7aa7a6c318e",
+                        "name": "DepartmentInfo.txt",
+                        "owner": null,
+                        "qualifiedName": "https://mycompanyaccount.blob.core.windows.net/mycompany/Sales/DepartmentInfo.txt",
+                        "typeName": "azure_blob_path"
+                    },
+                    {
+                        "@search.score": 1,
+                        "@search.highlights": {
+                            "qualifiedName": [
+                                "https://mycompanyaccount.blob.core.windows.net/<em>mycompany</em>/Marketing/VendorList.txt"
+                            ],
+                            "name": [
+                                "<em>VendorList.txt</em>"
+                            ]
+                        },
+                        "description": null,
+                        "id": "b2300e3a-ffdb-0057-0f1e-1d646e4f1d22",
+                        "name": "VendorList.txt",
+                        "owner": null,
+                        "qualifiedName": "https://mycompanyaccount.blob.core.windows.net/mycompany/Marketing/VendorList.txt",
+                        "typeName": "azure_blob_path"
+                    }
+                ]
+            }
+        }
+    }
+}

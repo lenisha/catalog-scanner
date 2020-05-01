@@ -1,0 +1,549 @@
+{
+	"info": {
+		"_postman_id": "4a05892c-3605-4a91-8f68-bf5f2c218bac",
+		"name": "DataCatalogTest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c7a56d16-6ac8-4635-85f3-c707d343a44a",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"access_token\", jsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "{{your-client-id}}",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{your-client-secret}}",
+							"type": "text"
+						},
+						{
+							"key": "resource",
+							"value": "https://management.core.windows.net/",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://login.microsoftonline.com/{{your-tenant-id}}/oauth2/token",
+					"protocol": "https",
+					"host": [
+						"login",
+						"microsoftonline",
+						"com"
+					],
+					"path": [
+						"{{your-tenant-id}}",
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v2/types/typedefs",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik4tbEMwbi05REFMcXdodUhZbkhRNjNHZUNYYyIsImtpZCI6Ik4tbEMwbi05REFMcXdodUhZbkhRNjNHZUNYYyJ9.eyJhdWQiOiJodHRwczovL21hbmFnZW1lbnQuY29yZS53aW5kb3dzLm5ldC8iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC83MmY5ODhiZi04NmYxLTQxYWYtOTFhYi0yZDdjZDAxMWRiNDcvIiwiaWF0IjoxNTU1MjkyODAzLCJuYmYiOjE1NTUyOTI4MDMsImV4cCI6MTU1NTI5NjcwMywiYWlvIjoiNDJaZ1lQQjgwdXIvV09uSElwc1hxdUtIV1I5bkF3QT0iLCJhcHBpZCI6IjY1NmVmMjdmLWZmNWUtNGM1NS05MjgwLTFjYTNmZDc1ODAxOSIsImFwcGlkYWNyIjoiMSIsImlkcCI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0Ny8iLCJvaWQiOiJiNmY3YmY4NS1kYjBhLTQ4OTctYjhkMS1kYTVkNGZmOWZjNTYiLCJzdWIiOiJiNmY3YmY4NS1kYjBhLTQ4OTctYjhkMS1kYTVkNGZmOWZjNTYiLCJ0aWQiOiI3MmY5ODhiZi04NmYxLTQxYWYtOTFhYi0yZDdjZDAxMWRiNDciLCJ1dGkiOiJ4UU9sUXVCVHZFLXpIbFpwYmc0U0FBIiwidmVyIjoiMS4wIn0.UknysYmWBYXeAiGtl4ZFRiapCo-hwpyqMVBbVv8SC4d0NpguAmd6L2R9BWk3aCVjQtGIQBdpPtJt1ImCu0KxMHNkRhMqitO98itx3UdjeK3zCvv7wPq4lUthQ0n7QNdDhfuxgcivly5zBSHnP_lK6QzuDMWizKzCuxjIrAV8UwmCOMfvGCS6Z8B78CtRaZe-SvAl6PVsKz0-w7o4-swBzPRumHN1AbdVkrwswsCdzAZ_P96vhk97jOcFcZ_YH9fRendYMny5ppNary4vF8LSZBNIMsWPW4VgG6u5wpV_gldxm1VB6Kyr6W2Fzg0U2J5hS29BcziIvexu-K6J-HoiBw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{your-atlas-endpoint}}/api/atlas/v2/types/typedefs",
+					"protocol": "https",
+					"host": [
+						"{{your-atlas-endpoint}}"
+					],
+					"path": [
+						"api",
+						"atlas",
+						"v2",
+						"types",
+						"typedefs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v2/search(asset)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IllNRUxIVDBndmIwbXhvU0RvWWZvbWpxZmpZVSIsImtpZCI6IllNRUxIVDBndmIwbXhvU0RvWWZvbWpxZmpZVSJ9.eyJhdWQiOiJodHRwczovL21hbmFnZW1lbnQuY29yZS53aW5kb3dzLm5ldC8iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC83MmY5ODhiZi04NmYxLTQxYWYtOTFhYi0yZDdjZDAxMWRiNDcvIiwiaWF0IjoxNTg2MzU0OTg0LCJuYmYiOjE1ODYzNTQ5ODQsImV4cCI6MTU4NjQ0MTY4NCwiYWlvIjoiNDJkZ1lCRE00ZW1ybk5BeHUzeXY3N1RXaFBPc0FBPT0iLCJhcHBpZCI6IjgyZmI1NTRmLTY1MDEtNDMyMS1hN2QyLTA2MDhlYmE5MTQzZSIsImFwcGlkYWNyIjoiMSIsImlkcCI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0Ny8iLCJvaWQiOiI1ZWIyZjAyYS1lMWFkLTRjN2QtOWI2Yy02N2Y5YzM4MDNiMmQiLCJzdWIiOiI1ZWIyZjAyYS1lMWFkLTRjN2QtOWI2Yy02N2Y5YzM4MDNiMmQiLCJ0aWQiOiI3MmY5ODhiZi04NmYxLTQxYWYtOTFhYi0yZDdjZDAxMWRiNDciLCJ1dGkiOiI5bkpTenVUaFJVZUdiZDJObnY1Q0FBIiwidmVyIjoiMS4wIn0.MbIZpMUfxpQFoLMp-NgTQTiHNQXGGpxWeYPari3T3KbriEbzuEX54DqZLLYlIfoBywiIYfWyq0xnfSvBagq0M_qX8BWZQ1u8PBRhj9e27L-UwV9GXiEIPqp9IMiGVavprjudUzJUFcoreLY-iJ9hKI54jT7IZtILFnX380PQm-DUtpc4njH5k430XOzVbhD4vqzXnrlNvH4tlk4ljs4-5n6Nh5YTcxWc7yn2Kll4-dowwZ1CXvGh0mVftwa-I3rODGZkHfPCJqy4QSFE0kFudk3PHFHgfHUT0DVaV_DUKOlXv6uG3iXtie8WxgZe4Op1MeiHJO1-XCTQpghaqlLFqw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"keywords\": \"testae\",\r\n    \"limit\": 30,\r\n    \"filter\": {\r\n        \"and\": [\r\n            {\r\n                \"typeName\": \"Asset\",\r\n                \"includeSubTypes\": true\r\n            }\r\n        ]\r\n    }\r\n}\r\n"
+				},
+				"url": {
+					"raw": "https://{{your-atlas-endpoint}}/api/atlas/v2/search/advanced",
+					"protocol": "https",
+					"host": [
+						"{{your-atlas-endpoint}}"
+					],
+					"path": [
+						"api",
+						"atlas",
+						"v2",
+						"search",
+						"advanced"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v2/search(db)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IllNRUxIVDBndmIwbXhvU0RvWWZvbWpxZmpZVSIsImtpZCI6IllNRUxIVDBndmIwbXhvU0RvWWZvbWpxZmpZVSJ9.eyJhdWQiOiJodHRwczovL21hbmFnZW1lbnQuY29yZS53aW5kb3dzLm5ldC8iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC83MmY5ODhiZi04NmYxLTQxYWYtOTFhYi0yZDdjZDAxMWRiNDcvIiwiaWF0IjoxNTg3MjYxNzk4LCJuYmYiOjE1ODcyNjE3OTgsImV4cCI6MTU4NzM0ODQ5OCwiYWlvIjoiNDJkZ1lQZ3J0R016Uy94TFU2bk5MWGNuTS9XV0F3QT0iLCJhcHBpZCI6IjgyZmI1NTRmLTY1MDEtNDMyMS1hN2QyLTA2MDhlYmE5MTQzZSIsImFwcGlkYWNyIjoiMSIsImlkcCI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0Ny8iLCJvaWQiOiI1ZWIyZjAyYS1lMWFkLTRjN2QtOWI2Yy02N2Y5YzM4MDNiMmQiLCJzdWIiOiI1ZWIyZjAyYS1lMWFkLTRjN2QtOWI2Yy02N2Y5YzM4MDNiMmQiLCJ0aWQiOiI3MmY5ODhiZi04NmYxLTQxYWYtOTFhYi0yZDdjZDAxMWRiNDciLCJ1dGkiOiJZb05hVkRIZGJFbTFwNHVKR3BsekFBIiwidmVyIjoiMS4wIn0.HwzA1bu0r6SYiCmj8lXtMeBULiG77_rQnszpoxxXhbJoih-VRymUE-HO1sgyHkOOM-U_Dd4Q5VYRK18MspIIEFRWo-DyDiKw3RvoqVDnwsdQRS3vNegWXi6mLHU0w1Mqdcw1w2n8jR7OHTJOF6bLDX25mKPRCOsfQGliGQ8U9TUPju2t5XinnVL-FVLAsBaYaPr8fTU8zY8mhrJ3lyE-TWNzsILTHmmiM-9pB9RQVIvc5vNQtoqRUY9rSe0Xwn_KqVKWiVD3vXT05K_gpkr_2CG_tjml4yd3yLhRmt05tXRe32nVHRtPGYkfi-dfL88s1ZC-q0YHBHWeP7OCURJy0Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"keywords\": \"testmetoday.database.windows.net\",\r\n    \"limit\": 30,\r\n    \"filter\": {\r\n        \"and\": [\r\n            {\r\n                \"typeName\": \"azure_sql_table\",\r\n                \"includeSubTypes\": true\r\n            }\r\n        ]\r\n    }\r\n}\r\n"
+				},
+				"url": {
+					"raw": "https://{{your-atlas-endpoint}}/api/atlas/v2/search/advanced",
+					"protocol": "https",
+					"host": [
+						"{{your-atlas-endpoint}}"
+					],
+					"path": [
+						"api",
+						"atlas",
+						"v2",
+						"search",
+						"advanced"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v2/entity",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IllNRUxIVDBndmIwbXhvU0RvWWZvbWpxZmpZVSIsImtpZCI6IllNRUxIVDBndmIwbXhvU0RvWWZvbWpxZmpZVSJ9.eyJhdWQiOiJodHRwczovL21hbmFnZW1lbnQuY29yZS53aW5kb3dzLm5ldC8iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC83MmY5ODhiZi04NmYxLTQxYWYtOTFhYi0yZDdjZDAxMWRiNDcvIiwiaWF0IjoxNTg2MzU0OTg0LCJuYmYiOjE1ODYzNTQ5ODQsImV4cCI6MTU4NjQ0MTY4NCwiYWlvIjoiNDJkZ1lCRE00ZW1ybk5BeHUzeXY3N1RXaFBPc0FBPT0iLCJhcHBpZCI6IjgyZmI1NTRmLTY1MDEtNDMyMS1hN2QyLTA2MDhlYmE5MTQzZSIsImFwcGlkYWNyIjoiMSIsImlkcCI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0Ny8iLCJvaWQiOiI1ZWIyZjAyYS1lMWFkLTRjN2QtOWI2Yy02N2Y5YzM4MDNiMmQiLCJzdWIiOiI1ZWIyZjAyYS1lMWFkLTRjN2QtOWI2Yy02N2Y5YzM4MDNiMmQiLCJ0aWQiOiI3MmY5ODhiZi04NmYxLTQxYWYtOTFhYi0yZDdjZDAxMWRiNDciLCJ1dGkiOiI5bkpTenVUaFJVZUdiZDJObnY1Q0FBIiwidmVyIjoiMS4wIn0.MbIZpMUfxpQFoLMp-NgTQTiHNQXGGpxWeYPari3T3KbriEbzuEX54DqZLLYlIfoBywiIYfWyq0xnfSvBagq0M_qX8BWZQ1u8PBRhj9e27L-UwV9GXiEIPqp9IMiGVavprjudUzJUFcoreLY-iJ9hKI54jT7IZtILFnX380PQm-DUtpc4njH5k430XOzVbhD4vqzXnrlNvH4tlk4ljs4-5n6Nh5YTcxWc7yn2Kll4-dowwZ1CXvGh0mVftwa-I3rODGZkHfPCJqy4QSFE0kFudk3PHFHgfHUT0DVaV_DUKOlXv6uG3iXtie8WxgZe4Op1MeiHJO1-XCTQpghaqlLFqw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"keywords\": \"testmetoday.database.windows.net\",\r\n    \"limit\": 10,\r\n    \"filter\": {\r\n        \"and\": [\r\n            {\r\n                \"typeName\": \"azure_sql_server\",\r\n                \"includeSubTypes\": true\r\n            }\r\n        ]\r\n    }\r\n}\r\n"
+				},
+				"url": {
+					"raw": "https://{{your-atlas-endpoint}}/api/atlas/v2/search/advanced",
+					"protocol": "https",
+					"host": [
+						"{{your-atlas-endpoint}}"
+					],
+					"path": [
+						"api",
+						"atlas",
+						"v2",
+						"search",
+						"advanced"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/datasources",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkN0VHVoTUptRDVNN0RMZHpEMnYyeDNRS1NSWSIsImtpZCI6IkN0VHVoTUptRDVNN0RMZHpEMnYyeDNRS1NSWSJ9.eyJhdWQiOiJodHRwczovL21hbmFnZW1lbnQuY29yZS53aW5kb3dzLm5ldC8iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC83MmY5ODhiZi04NmYxLTQxYWYtOTFhYi0yZDdjZDAxMWRiNDcvIiwiaWF0IjoxNTg4MjE2MzcxLCJuYmYiOjE1ODgyMTYzNzEsImV4cCI6MTU4ODMwMzA3MSwiYWlvIjoiNDJkZ1lDaEtWWG5CWG5yU1ZLMTQvdG1yQmZNakFRPT0iLCJhcHBpZCI6IjgyZmI1NTRmLTY1MDEtNDMyMS1hN2QyLTA2MDhlYmE5MTQzZSIsImFwcGlkYWNyIjoiMSIsImlkcCI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0Ny8iLCJvaWQiOiI1ZWIyZjAyYS1lMWFkLTRjN2QtOWI2Yy02N2Y5YzM4MDNiMmQiLCJyaCI6IjAuQVJvQXY0ajVjdkdHcjBHUnF5MTgwQkhiUjA5Vi00SUJaU0ZEcDlJR0NPdXBGRDRhQUFBLiIsInN1YiI6IjVlYjJmMDJhLWUxYWQtNGM3ZC05YjZjLTY3ZjljMzgwM2IyZCIsInRpZCI6IjcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0NyIsInV0aSI6IkQyZnJ3Ti15UVVTdEVSUnBpa0lpQUEiLCJ2ZXIiOiIxLjAifQ.YWvQl3mTNhFq97d1sEXbcmjRRXDL25wG-1Cso4gKqQtFKgEPKQ0NVkwU07cTw_T4Y32a2nSMRiMs1eWU2GYytR2X1HVScwFyiWmbyi9ZXlhfZPKJtbrB2SzXwTVkro_dMSAwua-tkhx59HRryghDWBfY43I2z8_ZfR2UhGNKCEXQfLNJFOqZEtz8z0u_DiM98lhLrPDoUq40qfawbVu6LCYDPguiUPPwfDwEQ3rb8nwuSjTRHPLN-c17E58AJv6s5Jwv8vy41beTGGeZ7-_nCMD03as32DGbGzRc38vrFJIMU7r37JYVruiMgQBxxQueiDbSKZJvMNUasBkIIXNr0w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"keywords\": \"testmetoday.database.windows.net\",\r\n    \"limit\": 10,\r\n    \"filter\": {\r\n        \"and\": [\r\n            {\r\n                \"typeName\": \"azure_sql_server\",\r\n                \"includeSubTypes\": true\r\n            }\r\n        ]\r\n    }\r\n}\r\n"
+				},
+				"url": {
+					"raw": "https://chilakosbabylon.scan.babylon.azure.com/datasources?apiVersion=2018-12-01-preview",
+					"protocol": "https",
+					"host": [
+						"chilakosbabylon",
+						"scan",
+						"babylon",
+						"azure",
+						"com"
+					],
+					"path": [
+						"datasources"
+					],
+					"query": [
+						{
+							"key": "apiVersion",
+							"value": "2018-12-01-preview"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/scans",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkN0VHVoTUptRDVNN0RMZHpEMnYyeDNRS1NSWSIsImtpZCI6IkN0VHVoTUptRDVNN0RMZHpEMnYyeDNRS1NSWSJ9.eyJhdWQiOiJodHRwczovL21hbmFnZW1lbnQuY29yZS53aW5kb3dzLm5ldC8iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC83MmY5ODhiZi04NmYxLTQxYWYtOTFhYi0yZDdjZDAxMWRiNDcvIiwiaWF0IjoxNTg4MjE2MzcxLCJuYmYiOjE1ODgyMTYzNzEsImV4cCI6MTU4ODMwMzA3MSwiYWlvIjoiNDJkZ1lDaEtWWG5CWG5yU1ZLMTQvdG1yQmZNakFRPT0iLCJhcHBpZCI6IjgyZmI1NTRmLTY1MDEtNDMyMS1hN2QyLTA2MDhlYmE5MTQzZSIsImFwcGlkYWNyIjoiMSIsImlkcCI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0Ny8iLCJvaWQiOiI1ZWIyZjAyYS1lMWFkLTRjN2QtOWI2Yy02N2Y5YzM4MDNiMmQiLCJyaCI6IjAuQVJvQXY0ajVjdkdHcjBHUnF5MTgwQkhiUjA5Vi00SUJaU0ZEcDlJR0NPdXBGRDRhQUFBLiIsInN1YiI6IjVlYjJmMDJhLWUxYWQtNGM3ZC05YjZjLTY3ZjljMzgwM2IyZCIsInRpZCI6IjcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0NyIsInV0aSI6IkQyZnJ3Ti15UVVTdEVSUnBpa0lpQUEiLCJ2ZXIiOiIxLjAifQ.YWvQl3mTNhFq97d1sEXbcmjRRXDL25wG-1Cso4gKqQtFKgEPKQ0NVkwU07cTw_T4Y32a2nSMRiMs1eWU2GYytR2X1HVScwFyiWmbyi9ZXlhfZPKJtbrB2SzXwTVkro_dMSAwua-tkhx59HRryghDWBfY43I2z8_ZfR2UhGNKCEXQfLNJFOqZEtz8z0u_DiM98lhLrPDoUq40qfawbVu6LCYDPguiUPPwfDwEQ3rb8nwuSjTRHPLN-c17E58AJv6s5Jwv8vy41beTGGeZ7-_nCMD03as32DGbGzRc38vrFJIMU7r37JYVruiMgQBxxQueiDbSKZJvMNUasBkIIXNr0w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"keywords\": \"testmetoday.database.windows.net\",\r\n    \"limit\": 10,\r\n    \"filter\": {\r\n        \"and\": [\r\n            {\r\n                \"typeName\": \"azure_sql_server\",\r\n                \"includeSubTypes\": true\r\n            }\r\n        ]\r\n    }\r\n}\r\n"
+				},
+				"url": {
+					"raw": "https://chilakosbabylon.scan.babylon.azure.com/datasources/sqlsource03/scans/scanmiweekly/triggers?apiVersion=2018-12-01-preview",
+					"protocol": "https",
+					"host": [
+						"chilakosbabylon",
+						"scan",
+						"babylon",
+						"azure",
+						"com"
+					],
+					"path": [
+						"datasources",
+						"sqlsource03",
+						"scans",
+						"scanmiweekly",
+						"triggers"
+					],
+					"query": [
+						{
+							"key": "apiVersion",
+							"value": "2018-12-01-preview"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/scans Trigger",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkN0VHVoTUptRDVNN0RMZHpEMnYyeDNRS1NSWSIsImtpZCI6IkN0VHVoTUptRDVNN0RMZHpEMnYyeDNRS1NSWSJ9.eyJhdWQiOiJodHRwczovL21hbmFnZW1lbnQuY29yZS53aW5kb3dzLm5ldC8iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC83MmY5ODhiZi04NmYxLTQxYWYtOTFhYi0yZDdjZDAxMWRiNDcvIiwiaWF0IjoxNTg4MjE2MzcxLCJuYmYiOjE1ODgyMTYzNzEsImV4cCI6MTU4ODMwMzA3MSwiYWlvIjoiNDJkZ1lDaEtWWG5CWG5yU1ZLMTQvdG1yQmZNakFRPT0iLCJhcHBpZCI6IjgyZmI1NTRmLTY1MDEtNDMyMS1hN2QyLTA2MDhlYmE5MTQzZSIsImFwcGlkYWNyIjoiMSIsImlkcCI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0Ny8iLCJvaWQiOiI1ZWIyZjAyYS1lMWFkLTRjN2QtOWI2Yy02N2Y5YzM4MDNiMmQiLCJyaCI6IjAuQVJvQXY0ajVjdkdHcjBHUnF5MTgwQkhiUjA5Vi00SUJaU0ZEcDlJR0NPdXBGRDRhQUFBLiIsInN1YiI6IjVlYjJmMDJhLWUxYWQtNGM3ZC05YjZjLTY3ZjljMzgwM2IyZCIsInRpZCI6IjcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0NyIsInV0aSI6IkQyZnJ3Ti15UVVTdEVSUnBpa0lpQUEiLCJ2ZXIiOiIxLjAifQ.YWvQl3mTNhFq97d1sEXbcmjRRXDL25wG-1Cso4gKqQtFKgEPKQ0NVkwU07cTw_T4Y32a2nSMRiMs1eWU2GYytR2X1HVScwFyiWmbyi9ZXlhfZPKJtbrB2SzXwTVkro_dMSAwua-tkhx59HRryghDWBfY43I2z8_ZfR2UhGNKCEXQfLNJFOqZEtz8z0u_DiM98lhLrPDoUq40qfawbVu6LCYDPguiUPPwfDwEQ3rb8nwuSjTRHPLN-c17E58AJv6s5Jwv8vy41beTGGeZ7-_nCMD03as32DGbGzRc38vrFJIMU7r37JYVruiMgQBxxQueiDbSKZJvMNUasBkIIXNr0w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n            \"properties\": {\r\n                \"recurrenceInterval\": \"30.00:00:00\",\r\n                \"timeoutInterval\": \"30.00:00:00\",\r\n                \"scanLevel\": \"Incremental\"\r\n            },\r\n            \"name\": \"default\"\r\n}"
+				},
+				"url": {
+					"raw": "https://chilakosbabylon.scan.babylon.azure.com/datasources/sqlsource03/scans/scanmi/triggers/default?apiVersion=2018-12-01-preview",
+					"protocol": "https",
+					"host": [
+						"chilakosbabylon",
+						"scan",
+						"babylon",
+						"azure",
+						"com"
+					],
+					"path": [
+						"datasources",
+						"sqlsource03",
+						"scans",
+						"scanmi",
+						"triggers",
+						"default"
+					],
+					"query": [
+						{
+							"key": "apiVersion",
+							"value": "2018-12-01-preview"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/scans Create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkN0VHVoTUptRDVNN0RMZHpEMnYyeDNRS1NSWSIsImtpZCI6IkN0VHVoTUptRDVNN0RMZHpEMnYyeDNRS1NSWSJ9.eyJhdWQiOiJodHRwczovL21hbmFnZW1lbnQuY29yZS53aW5kb3dzLm5ldC8iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC83MmY5ODhiZi04NmYxLTQxYWYtOTFhYi0yZDdjZDAxMWRiNDcvIiwiaWF0IjoxNTg4MjE2MzcxLCJuYmYiOjE1ODgyMTYzNzEsImV4cCI6MTU4ODMwMzA3MSwiYWlvIjoiNDJkZ1lDaEtWWG5CWG5yU1ZLMTQvdG1yQmZNakFRPT0iLCJhcHBpZCI6IjgyZmI1NTRmLTY1MDEtNDMyMS1hN2QyLTA2MDhlYmE5MTQzZSIsImFwcGlkYWNyIjoiMSIsImlkcCI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0Ny8iLCJvaWQiOiI1ZWIyZjAyYS1lMWFkLTRjN2QtOWI2Yy02N2Y5YzM4MDNiMmQiLCJyaCI6IjAuQVJvQXY0ajVjdkdHcjBHUnF5MTgwQkhiUjA5Vi00SUJaU0ZEcDlJR0NPdXBGRDRhQUFBLiIsInN1YiI6IjVlYjJmMDJhLWUxYWQtNGM3ZC05YjZjLTY3ZjljMzgwM2IyZCIsInRpZCI6IjcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0NyIsInV0aSI6IkQyZnJ3Ti15UVVTdEVSUnBpa0lpQUEiLCJ2ZXIiOiIxLjAifQ.YWvQl3mTNhFq97d1sEXbcmjRRXDL25wG-1Cso4gKqQtFKgEPKQ0NVkwU07cTw_T4Y32a2nSMRiMs1eWU2GYytR2X1HVScwFyiWmbyi9ZXlhfZPKJtbrB2SzXwTVkro_dMSAwua-tkhx59HRryghDWBfY43I2z8_ZfR2UhGNKCEXQfLNJFOqZEtz8z0u_DiM98lhLrPDoUq40qfawbVu6LCYDPguiUPPwfDwEQ3rb8nwuSjTRHPLN-c17E58AJv6s5Jwv8vy41beTGGeZ7-_nCMD03as32DGbGzRc38vrFJIMU7r37JYVruiMgQBxxQueiDbSKZJvMNUasBkIIXNr0w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"properties\": {\r\n        \"serverEndpoint\": \"testmetoday.database.windows.net\",\r\n        \"databaseName\": \"testae\",\r\n        \"scanRulesetName\": null,\r\n        \"workers\": null\r\n    },\r\n    \"kind\": \"AzureSqlDatabaseMsi\",\r\n    \"name\": \"scan01mi\"\r\n\t\r\n}"
+				},
+				"url": {
+					"raw": "https://chilakosbabylon.scan.babylon.azure.com/datasources/sqlsource03/scans/scan01mi?apiVersion=2018-12-01-preview",
+					"protocol": "https",
+					"host": [
+						"chilakosbabylon",
+						"scan",
+						"babylon",
+						"azure",
+						"com"
+					],
+					"path": [
+						"datasources",
+						"sqlsource03",
+						"scans",
+						"scan01mi"
+					],
+					"query": [
+						{
+							"key": "apiVersion",
+							"value": "2018-12-01-preview"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/scans Run",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkN0VHVoTUptRDVNN0RMZHpEMnYyeDNRS1NSWSIsImtpZCI6IkN0VHVoTUptRDVNN0RMZHpEMnYyeDNRS1NSWSJ9.eyJhdWQiOiJodHRwczovL21hbmFnZW1lbnQuY29yZS53aW5kb3dzLm5ldC8iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC83MmY5ODhiZi04NmYxLTQxYWYtOTFhYi0yZDdjZDAxMWRiNDcvIiwiaWF0IjoxNTg4MjE2MzcxLCJuYmYiOjE1ODgyMTYzNzEsImV4cCI6MTU4ODMwMzA3MSwiYWlvIjoiNDJkZ1lDaEtWWG5CWG5yU1ZLMTQvdG1yQmZNakFRPT0iLCJhcHBpZCI6IjgyZmI1NTRmLTY1MDEtNDMyMS1hN2QyLTA2MDhlYmE5MTQzZSIsImFwcGlkYWNyIjoiMSIsImlkcCI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0Ny8iLCJvaWQiOiI1ZWIyZjAyYS1lMWFkLTRjN2QtOWI2Yy02N2Y5YzM4MDNiMmQiLCJyaCI6IjAuQVJvQXY0ajVjdkdHcjBHUnF5MTgwQkhiUjA5Vi00SUJaU0ZEcDlJR0NPdXBGRDRhQUFBLiIsInN1YiI6IjVlYjJmMDJhLWUxYWQtNGM3ZC05YjZjLTY3ZjljMzgwM2IyZCIsInRpZCI6IjcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0NyIsInV0aSI6IkQyZnJ3Ti15UVVTdEVSUnBpa0lpQUEiLCJ2ZXIiOiIxLjAifQ.YWvQl3mTNhFq97d1sEXbcmjRRXDL25wG-1Cso4gKqQtFKgEPKQ0NVkwU07cTw_T4Y32a2nSMRiMs1eWU2GYytR2X1HVScwFyiWmbyi9ZXlhfZPKJtbrB2SzXwTVkro_dMSAwua-tkhx59HRryghDWBfY43I2z8_ZfR2UhGNKCEXQfLNJFOqZEtz8z0u_DiM98lhLrPDoUq40qfawbVu6LCYDPguiUPPwfDwEQ3rb8nwuSjTRHPLN-c17E58AJv6s5Jwv8vy41beTGGeZ7-_nCMD03as32DGbGzRc38vrFJIMU7r37JYVruiMgQBxxQueiDbSKZJvMNUasBkIIXNr0w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"scanLevel\":\"Full\"\r\n  \r\n}"
+				},
+				"url": {
+					"raw": "https://chilakosbabylon.scan.babylon.azure.com/datasources/sqlsource03/scans/scan01mi/run?apiVersion=2018-12-01-preview",
+					"protocol": "https",
+					"host": [
+						"chilakosbabylon",
+						"scan",
+						"babylon",
+						"azure",
+						"com"
+					],
+					"path": [
+						"datasources",
+						"sqlsource03",
+						"scans",
+						"scan01mi",
+						"run"
+					],
+					"query": [
+						{
+							"key": "apiVersion",
+							"value": "2018-12-01-preview"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/datasource create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkN0VHVoTUptRDVNN0RMZHpEMnYyeDNRS1NSWSIsImtpZCI6IkN0VHVoTUptRDVNN0RMZHpEMnYyeDNRS1NSWSJ9.eyJhdWQiOiJodHRwczovL21hbmFnZW1lbnQuY29yZS53aW5kb3dzLm5ldC8iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC83MmY5ODhiZi04NmYxLTQxYWYtOTFhYi0yZDdjZDAxMWRiNDcvIiwiaWF0IjoxNTg4MjE2MzcxLCJuYmYiOjE1ODgyMTYzNzEsImV4cCI6MTU4ODMwMzA3MSwiYWlvIjoiNDJkZ1lDaEtWWG5CWG5yU1ZLMTQvdG1yQmZNakFRPT0iLCJhcHBpZCI6IjgyZmI1NTRmLTY1MDEtNDMyMS1hN2QyLTA2MDhlYmE5MTQzZSIsImFwcGlkYWNyIjoiMSIsImlkcCI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0Ny8iLCJvaWQiOiI1ZWIyZjAyYS1lMWFkLTRjN2QtOWI2Yy02N2Y5YzM4MDNiMmQiLCJyaCI6IjAuQVJvQXY0ajVjdkdHcjBHUnF5MTgwQkhiUjA5Vi00SUJaU0ZEcDlJR0NPdXBGRDRhQUFBLiIsInN1YiI6IjVlYjJmMDJhLWUxYWQtNGM3ZC05YjZjLTY3ZjljMzgwM2IyZCIsInRpZCI6IjcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0NyIsInV0aSI6IkQyZnJ3Ti15UVVTdEVSUnBpa0lpQUEiLCJ2ZXIiOiIxLjAifQ.YWvQl3mTNhFq97d1sEXbcmjRRXDL25wG-1Cso4gKqQtFKgEPKQ0NVkwU07cTw_T4Y32a2nSMRiMs1eWU2GYytR2X1HVScwFyiWmbyi9ZXlhfZPKJtbrB2SzXwTVkro_dMSAwua-tkhx59HRryghDWBfY43I2z8_ZfR2UhGNKCEXQfLNJFOqZEtz8z0u_DiM98lhLrPDoUq40qfawbVu6LCYDPguiUPPwfDwEQ3rb8nwuSjTRHPLN-c17E58AJv6s5Jwv8vy41beTGGeZ7-_nCMD03as32DGbGzRc38vrFJIMU7r37JYVruiMgQBxxQueiDbSKZJvMNUasBkIIXNr0w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"properties\": {\r\n        \"serverEndpoint\": \"testmetoday.database.windows.net\"\r\n     },\r\n    \"kind\": \"AzureSqlDatabase\",\r\n    \"name\": \"sqlsource03\"\r\n}"
+				},
+				"url": {
+					"raw": "https://chilakosbabylon.scan.babylon.azure.com/datasources/sqlsource03?api-version=2018-12-01-preview",
+					"protocol": "https",
+					"host": [
+						"chilakosbabylon",
+						"scan",
+						"babylon",
+						"azure",
+						"com"
+					],
+					"path": [
+						"datasources",
+						"sqlsource03"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "2018-12-01-preview"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

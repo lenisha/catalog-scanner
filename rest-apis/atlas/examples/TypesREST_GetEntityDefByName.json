@@ -1,0 +1,69 @@
+{
+    "parameters": {
+        "name": "DataSet"
+    },
+    "responses": {
+        "200": {
+            "headers": {
+                "Access-Control-Allow-Headers": "authorization,content-type,x-xsrf-header,x-ms-client-request-id",
+                "Access-Control-Allow-Methods": "GET,OPTIONS,HEAD,PUT,POST,DELETE,PATCH",
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Expose-Headers": "x-ms-request-id",
+                "Content-Type": "application/json; charset=UTF-8",
+                "Server": "Jetty(9.3.14.v20161028)",
+                "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+                "Transfer-Encoding": "chunked",
+                "X-Content-Type-Options": "nosniff",
+                "X-Frame-Options": "DENY",
+                "x-ms-request-id": "97930d08-0a53-4bb5-a352-08e7761bf20a",
+                "X-XSS-Protection": "1; mode=block"
+            },
+            "body": {
+                "category": "ENTITY",
+                "guid": "4bc54c37-98a8-4de8-9ee8-182610859d43",
+                "createdBy": "vsts",
+                "updatedBy": "vsts",
+                "createTime": 1553065960959,
+                "updateTime": 1553065960959,
+                "version": 1,
+                "name": "DataSet",
+                "description": "DataSet",
+                "typeVersion": "1.1",
+                "attributeDefs": [],
+                "superTypes": [
+                    "Asset"
+                ],
+                "subTypes": [
+                    "rdbms_foreign_key",
+                    "azure_datalake_gen1_path",
+                    "hive_table",
+                    "mssql_column",
+                    "sqoop_dbdatastore",
+                    "hbase_column",
+                    "azure_sql_table",
+                    "rdbms_instance",
+                    "azure_datalake_gen2_path",
+                    "jms_topic",
+                    "falcon_feed",
+                    "hbase_table",
+                    "rdbms_table",
+                    "rdbms_column",
+                    "hbase_column_family",
+                    "hive_column",
+                    "azure_blob_container",
+                    "rdbms_db",
+                    "column",
+                    "azure_blob_path",
+                    "kafka_topic",
+                    "tabular_schema",
+                    "azure_datalake_gen2_filesystem",
+                    "rdbms_index",
+                    "azure_sql_column",
+                    "mssql_table",
+                    "avro_type",
+                    "fs_path"
+                ]
+            }
+        }
+    }
+}

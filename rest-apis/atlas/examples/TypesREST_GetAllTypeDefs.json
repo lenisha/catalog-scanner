@@ -1,0 +1,393 @@
+{
+    "parameters": {
+    },
+    "responses": {
+        "200": {
+            "headers": {
+                "Access-Control-Allow-Headers": "authorization,content-type,x-xsrf-header,x-ms-client-request-id",
+                "Access-Control-Allow-Methods": "GET,OPTIONS,HEAD,PUT,POST,DELETE,PATCH",
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Expose-Headers": "x-ms-request-id",
+                "Content-Type": "application/json; charset=UTF-8",
+                "Server": "Jetty(9.3.14.v20161028)",
+                "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+                "Transfer-Encoding": "chunked",
+                "X-Content-Type-Options": "nosniff",
+                "X-Frame-Options": "DENY",
+                "x-ms-request-id": "97930d08-0a53-4bb5-a352-08e7761bf20a",
+                "X-XSS-Protection": "1; mode=block"
+            },
+            "body": {
+                "enumDefs": [
+                    {
+                        "category": "ENUM",
+                        "guid": "644ab9c7-893a-4a4d-8e0a-591a6556d1a0",
+                        "createdBy": "vsts",
+                        "updatedBy": "vsts",
+                        "createTime": 1553065968102,
+                        "updateTime": 1553065968102,
+                        "version": 1,
+                        "name": "hive_principal_type",
+                        "description": "hive_principal_type",
+                        "typeVersion": "1.0",
+                        "elementDefs": [
+                            {
+                                "value": "USER",
+                                "ordinal": 1
+                            },
+                            {
+                                "value": "ROLE",
+                                "ordinal": 2
+                            },
+                            {
+                                "value": "GROUP",
+                                "ordinal": 3
+                            }
+                        ]
+                    },
+                    {
+                        "category": "ENUM",
+                        "guid": "e5030e81-da05-4571-84f1-265ce20fa6d9",
+                        "createdBy": "vsts",
+                        "updatedBy": "vsts",
+                        "createTime": 1553065962574,
+                        "updateTime": 1553065962574,
+                        "version": 1,
+                        "name": "AtlasGlossaryTermRelationshipStatus",
+                        "description": "TermRelationshipStatus defines how reliable the relationship is between two glossary terms",
+                        "typeVersion": "1.0",
+                        "elementDefs": [
+                            {
+                                "value": "DRAFT",
+                                "description": "DRAFT means the relationship is under development.",
+                                "ordinal": 0
+                            },
+                            {
+                                "value": "ACTIVE",
+                                "description": "ACTIVE means the relationship is validated and in use.",
+                                "ordinal": 1
+                            },
+                            {
+                                "value": "DEPRECATED",
+                                "description": "DEPRECATED means the the relationship is being phased out.",
+                                "ordinal": 2
+                            },
+                            {
+                                "value": "OBSOLETE",
+                                "description": "OBSOLETE means that the relationship should not be used anymore.",
+                                "ordinal": 3
+                            },
+                            {
+                                "value": "OTHER",
+                                "description": "OTHER means that there is another status.",
+                                "ordinal": 99
+                            }
+                        ]
+                    }
+                ],
+                "structDefs": [
+                    {
+                        "category": "STRUCT",
+                        "guid": "f1571b6e-ad08-4040-a9a7-c30ed935d437",
+                        "createdBy": "vsts",
+                        "updatedBy": "vsts",
+                        "createTime": 1553065968145,
+                        "updateTime": 1553065968145,
+                        "version": 1,
+                        "name": "hive_order",
+                        "description": "hive_order",
+                        "typeVersion": "1.0",
+                        "attributeDefs": [
+                            {
+                                "name": "order",
+                                "typeName": "int",
+                                "isOptional": false,
+                                "cardinality": "SINGLE",
+                                "valuesMinCount": 1,
+                                "valuesMaxCount": 1,
+                                "isUnique": false,
+                                "isIndexable": false,
+                                "includeInNotification": false
+                            },
+                            {
+                                "name": "col",
+                                "typeName": "string",
+                                "isOptional": false,
+                                "cardinality": "SINGLE",
+                                "valuesMinCount": 1,
+                                "valuesMaxCount": 1,
+                                "isUnique": false,
+                                "isIndexable": false,
+                                "includeInNotification": false
+                            }
+                        ]
+                    },
+                    {
+                        "category": "STRUCT",
+                        "guid": "035321fe-6899-4da5-a3dd-955be39ebdb6",
+                        "createdBy": "vsts",
+                        "updatedBy": "vsts",
+                        "createTime": 1553065968186,
+                        "updateTime": 1553065968186,
+                        "version": 1,
+                        "name": "hive_serde",
+                        "description": "hive_serde",
+                        "typeVersion": "1.0",
+                        "attributeDefs": [
+                            {
+                                "name": "name",
+                                "typeName": "string",
+                                "isOptional": true,
+                                "cardinality": "SINGLE",
+                                "valuesMinCount": 0,
+                                "valuesMaxCount": 1,
+                                "isUnique": false,
+                                "isIndexable": false,
+                                "includeInNotification": false
+                            },
+                            {
+                                "name": "serializationLib",
+                                "typeName": "string",
+                                "isOptional": true,
+                                "cardinality": "SINGLE",
+                                "valuesMinCount": 0,
+                                "valuesMaxCount": 1,
+                                "isUnique": false,
+                                "isIndexable": false,
+                                "includeInNotification": false
+                            },
+                            {
+                                "name": "parameters",
+                                "typeName": "map<string,string>",
+                                "isOptional": true,
+                                "cardinality": "SINGLE",
+                                "valuesMinCount": 0,
+                                "valuesMaxCount": 1,
+                                "isUnique": false,
+                                "isIndexable": false,
+                                "includeInNotification": false
+                            }
+                        ]
+                    }
+                ],
+                "classificationDefs": [
+                    {
+                        "category": "CLASSIFICATION",
+                        "guid": "e79878fa-adba-4ee5-adc5-328d8841cd49",
+                        "createdBy": "vsts",
+                        "updatedBy": "vsts",
+                        "createTime": 1553065966043,
+                        "updateTime": 1553065966043,
+                        "version": 1,
+                        "name": "GOVERNMENT.CANADA.SOCIAL_INSURANCE_NUMBER",
+                        "description": "Canada Social Insurance Number",
+                        "typeVersion": "1.0",
+                        "attributeDefs": [],
+                        "superTypes": [],
+                        "entityTypes": [],
+                        "subTypes": []
+                    },
+                    {
+                        "category": "CLASSIFICATION",
+                        "guid": "d9a8c597-6abe-4573-a13b-bcedcf8761d2",
+                        "createdBy": "vsts",
+                        "updatedBy": "vsts",
+                        "createTime": 1553065966329,
+                        "updateTime": 1553065966329,
+                        "version": 1,
+                        "name": "GOVERNMENT.UK.NATIONAL_INSURANCE_NUMBER",
+                        "description": "U.K. national insurance number (NINO)",
+                        "typeVersion": "1.0",
+                        "attributeDefs": [],
+                        "superTypes": [],
+                        "entityTypes": [],
+                        "subTypes": []
+                    }
+                ],
+                "entityDefs": [
+                    {
+                        "category": "ENTITY",
+                        "guid": "4bc54c37-98a8-4de8-9ee8-182610859d43",
+                        "createdBy": "vsts",
+                        "updatedBy": "vsts",
+                        "createTime": 1553065960959,
+                        "updateTime": 1553065960959,
+                        "version": 1,
+                        "name": "DataSet",
+                        "description": "DataSet",
+                        "typeVersion": "1.1",
+                        "attributeDefs": [],
+                        "superTypes": [
+                            "Asset"
+                        ],
+                        "subTypes": [
+                            "rdbms_foreign_key",
+                            "azure_datalake_gen1_path",
+                            "hive_table",
+                            "mssql_column",
+                            "sqoop_dbdatastore",
+                            "hbase_column",
+                            "azure_sql_table",
+                            "rdbms_instance",
+                            "azure_datalake_gen2_path",
+                            "jms_topic",
+                            "falcon_feed",
+                            "hbase_table",
+                            "rdbms_table",
+                            "rdbms_column",
+                            "hbase_column_family",
+                            "hive_column",
+                            "azure_blob_container",
+                            "rdbms_db",
+                            "column",
+                            "azure_blob_path",
+                            "kafka_topic",
+                            "tabular_schema",
+                            "azure_datalake_gen2_filesystem",
+                            "rdbms_index",
+                            "azure_sql_column",
+                            "mssql_table",
+                            "avro_type",
+                            "fs_path"
+                        ]
+                    },
+                    {
+                        "category": "ENTITY",
+                        "guid": "36317b98-98ac-41b9-a169-cd2734300554",
+                        "createdBy": "vsts",
+                        "updatedBy": "vsts",
+                        "createTime": 1553065994755,
+                        "updateTime": 1553065994755,
+                        "version": 1,
+                        "name": "azure_datalake_gen1_path",
+                        "description": "azure_datalake_gen1_path",
+                        "typeVersion": "1.0",
+                        "attributeDefs": [
+                            {
+                                "name": "account",
+                                "typeName": "azure_datalake_gen1_account",
+                                "isOptional": false,
+                                "cardinality": "SINGLE",
+                                "valuesMinCount": 1,
+                                "valuesMaxCount": 1,
+                                "isUnique": false,
+                                "isIndexable": false,
+                                "includeInNotification": false
+                            },
+                            {
+                                "name": "path",
+                                "typeName": "string",
+                                "isOptional": false,
+                                "cardinality": "SINGLE",
+                                "valuesMinCount": 1,
+                                "valuesMaxCount": 1,
+                                "isUnique": false,
+                                "isIndexable": false,
+                                "includeInNotification": false
+                            },
+                            {
+                                "name": "isFile",
+                                "typeName": "boolean",
+                                "isOptional": false,
+                                "cardinality": "SINGLE",
+                                "valuesMinCount": 1,
+                                "valuesMaxCount": 1,
+                                "isUnique": false,
+                                "isIndexable": false,
+                                "includeInNotification": false
+                            },
+                            {
+                                "name": "size",
+                                "typeName": "long",
+                                "isOptional": true,
+                                "cardinality": "SINGLE",
+                                "valuesMinCount": 0,
+                                "valuesMaxCount": 1,
+                                "isUnique": false,
+                                "isIndexable": false,
+                                "includeInNotification": false
+                            },
+                            {
+                                "name": "modifiedTime",
+                                "typeName": "date",
+                                "isOptional": true,
+                                "cardinality": "SINGLE",
+                                "valuesMinCount": 0,
+                                "valuesMaxCount": 1,
+                                "isUnique": false,
+                                "isIndexable": false,
+                                "includeInNotification": false
+                            }
+                        ],
+                        "superTypes": [
+                            "DataSet"
+                        ],
+                        "subTypes": []
+                    }
+                ],
+                "relationshipDefs": [
+                    {
+                        "category": "RELATIONSHIP",
+                        "guid": "695edde1-2782-4a3c-841b-0b3aba25fe45",
+                        "createdBy": "vsts",
+                        "updatedBy": "vsts",
+                        "createTime": 1553065976797,
+                        "updateTime": 1553065976797,
+                        "version": 1,
+                        "name": "storm_topology_nodes",
+                        "description": "storm_topology_nodes",
+                        "typeVersion": "1.0",
+                        "attributeDefs": [],
+                        "relationshipCategory": "ASSOCIATION",
+                        "propagateTags": "NONE",
+                        "endDef1": {
+                            "type": "storm_topology",
+                            "name": "nodes",
+                            "isContainer": false,
+                            "cardinality": "SET",
+                            "isLegacyAttribute": true
+                        },
+                        "endDef2": {
+                            "type": "storm_node",
+                            "name": "topolgies",
+                            "isContainer": false,
+                            "cardinality": "SET",
+                            "isLegacyAttribute": false
+                        },
+                        "relationshipLabel": "r:storm_topology_nodes"
+                    },
+                    {
+                        "category": "RELATIONSHIP",
+                        "guid": "6d20bb6e-f67f-42c6-ba8c-608ad471cb21",
+                        "createdBy": "vsts",
+                        "updatedBy": "vsts",
+                        "createTime": 1553065974255,
+                        "updateTime": 1553065974255,
+                        "version": 1,
+                        "name": "avro_schema_associatedEntities",
+                        "description": "avro_schema_associatedEntities",
+                        "typeVersion": "1.0",
+                        "attributeDefs": [],
+                        "relationshipCategory": "ASSOCIATION",
+                        "propagateTags": "NONE",
+                        "endDef1": {
+                            "type": "avro_schema",
+                            "name": "associatedEntities",
+                            "isContainer": false,
+                            "cardinality": "SET",
+                            "isLegacyAttribute": true
+                        },
+                        "endDef2": {
+                            "type": "DataSet",
+                            "name": "schema",
+                            "isContainer": false,
+                            "cardinality": "SET",
+                            "isLegacyAttribute": false
+                        },
+                        "relationshipLabel": "r:avro_schema_associatedEntities"
+                    }
+                ]
+            }
+        }
+    }
+}

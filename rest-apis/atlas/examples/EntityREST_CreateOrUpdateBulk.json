@@ -1,0 +1,141 @@
+{
+    "parameters": {
+        "entities": {
+            "referredEntities": {},
+            "entities": [
+                {
+                    "typeName": "azure_blob_container",
+                    "attributes": {
+                        "owner": null,
+                        "path": "e2etest_container2_228",
+                        "modifiedTime": 0,
+                        "createTime": 0,
+                        "qualifiedName": "https://account228.blob.core.windows.net/e2etest_container2_228_7",
+                        "name": "e2etest_container2_228_7",
+                        "description": null,
+                        "publicAccessLevel": null,
+                        "account": {
+                            "guid": "035942ff-d757-ff3b-9af1-519c65e2c430",
+                            "typeName": "azure_storage_account"
+                        }
+                    },
+                    "status": "ACTIVE",
+                    "createdBy": "ServiceAdmin",
+                    "updatedBy": "ServiceAdmin",
+                    "createTime": 1549176489615,
+                    "updateTime": 1553674775369,
+                    "version": 0,
+                    "relationshipAttributes": {
+                        "schema": [],
+                        "inputToProcesses": [],
+                        "meanings": [],
+                        "account": {
+                            "guid": "035942ff-d757-ff3b-9af1-519c65e2c430",
+                            "typeName": "azure_storage_account",
+                            "displayText": "account228",
+                            "relationshipStatus": "ACTIVE",
+                            "relationshipAttributes": {
+                                "typeName": "storage_container_account"
+                            }
+                        },
+                        "outputFromProcesses": [],
+                        "tabular_schema": null
+                    }
+                },
+                {
+                    "typeName": "azure_blob_container",
+                    "attributes": {
+                        "owner": null,
+                        "path": "e2etest_container2_228",
+                        "modifiedTime": 0,
+                        "createTime": 0,
+                        "qualifiedName": "https://account228.blob.core.windows.net/e2etest_container2_228_8",
+                        "name": "e2etest_container2_228_8",
+                        "description": null,
+                        "publicAccessLevel": null,
+                        "account": {
+                            "guid": "035942ff-d757-ff3b-9af1-519c65e2c430",
+                            "typeName": "azure_storage_account"
+                        }
+                    },
+                    "status": "ACTIVE",
+                    "createdBy": "ServiceAdmin",
+                    "updatedBy": "ServiceAdmin",
+                    "createTime": 1549176489615,
+                    "updateTime": 1553674775369,
+                    "version": 0,
+                    "relationshipAttributes": {
+                        "schema": [],
+                        "inputToProcesses": [],
+                        "meanings": [],
+                        "account": {
+                            "guid": "035942ff-d757-ff3b-9af1-519c65e2c430",
+                            "typeName": "azure_storage_account",
+                            "displayText": "account228",
+                            "relationshipStatus": "ACTIVE",
+                            "relationshipAttributes": {
+                                "typeName": "storage_container_account"
+                            }
+                        },
+                        "outputFromProcesses": [],
+                        "tabular_schema": null
+                    }
+                }
+            ]
+        }
+    },
+    "responses": {
+        "200": {
+            "headers": {
+                "Access-Control-Allow-Headers": "authorization,content-type,x-xsrf-header,x-ms-client-request-id",
+                "Access-Control-Allow-Methods": "GET,OPTIONS,HEAD,PUT,POST,DELETE,PATCH",
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Expose-Headers": "x-ms-request-id",
+                "Content-Type": "application/json; charset=UTF-8",
+                "Server": "Jetty(9.3.14.v20161028)",
+                "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+                "Transfer-Encoding": "chunked",
+                "X-Content-Type-Options": "nosniff",
+                "X-Frame-Options": "DENY",
+                "x-ms-request-id": "97930d08-0a53-4bb5-a352-08e7761bf20a",
+                "X-XSS-Protection": "1; mode=block"
+            },
+            "body": {
+                "mutatedEntities": {
+                    "CREATE": [
+                        {
+                            "typeName": "azure_blob_container",
+                            "attributes": {
+                                "qualifiedName": "https://account228.blob.core.windows.net/e2etest_container2_228_7"
+                            },
+                            "guid": "7f3ce08a-84e9-93ec-2dea-e83a8fe9f0d6",
+                            "status": "ACTIVE"
+                        },
+                        {
+                            "typeName": "azure_blob_container",
+                            "attributes": {
+                                "qualifiedName": "https://account228.blob.core.windows.net/e2etest_container2_228_8"
+                            },
+                            "guid": "9febca70-7bb7-aa4e-e64f-47bf518538f6",
+                            "status": "ACTIVE"
+                        }
+                    ],
+                    "UPDATE": [
+                        {
+                            "typeName": "azure_storage_account",
+                            "attributes": {
+                                "qualifiedName": "https://account228.blob.core.windows.net"
+                            },
+                            "guid": "035942ff-d757-ff3b-9af1-519c65e2c430",
+                            "status": "ACTIVE"
+                        }
+                    ]
+                },
+                "guidAssignments": {
+                    "-2590878472127257": "9febca70-7bb7-aa4e-e64f-47bf518538f6",
+                    "-2590878472127256": "7f3ce08a-84e9-93ec-2dea-e83a8fe9f0d6"
+                }
+            }
+        }
+    }
+}

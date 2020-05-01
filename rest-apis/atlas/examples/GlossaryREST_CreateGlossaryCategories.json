@@ -1,0 +1,69 @@
+{
+    "parameters": {
+        "glossaryCategory": [
+            {
+                "name": "Category3",
+                "anchor": {
+                    "glossaryGuid": "c0c54153-13d1-1608-13af-43457cdf1234"
+                },
+                "terms": [
+                    {
+                        "termGuid": "6f420602-48e8-ae0d-042f-1518ff310330",
+                        "relationGuid": "7d64843a-de8d-4239-b3a7-6c0de4c3289f"
+                    }
+                ]
+            },
+            {
+                "name": "Category4",
+                "anchor": {
+                    "glossaryGuid": "c0c54153-13d1-1608-13af-43457cdf1234"
+                }
+            }
+        ]  
+    },
+    "responses": {
+        "200": {
+            "headers": {
+                "Access-Control-Allow-Headers": "authorization,content-type,x-xsrf-header,x-ms-client-request-id",
+                "Access-Control-Allow-Methods": "GET,OPTIONS,HEAD,PUT,POST,DELETE,PATCH",
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Expose-Headers": "x-ms-request-id",
+                "Content-Type": "application/json; charset=UTF-8",
+                "Server": "Jetty(9.3.14.v20161028)",
+                "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+                "Transfer-Encoding": "chunked",
+                "X-Content-Type-Options": "nosniff",
+                "X-Frame-Options": "DENY",
+                "x-ms-request-id": "97930d08-0a53-4bb5-a352-08e7761bf20a",
+                "X-XSS-Protection": "1; mode=block"
+            },
+            "body": [
+                {
+                    "guid": "56ca656a-e3a5-0c8c-eace-e0ab4d528975",
+                    "qualifiedName": "Category3@Default category 2",
+                    "name": "Category3",
+                    "anchor": {
+                        "glossaryGuid": "c0c54153-13d1-1608-13af-43457cdf1234",
+                        "relationGuid": "a511124b-117e-424e-9c32-bca8d4d7e827"
+                    },
+                    "terms": [
+                        {
+                            "termGuid": "6f420602-48e8-ae0d-042f-1518ff310330",
+                            "relationGuid": "5b4e23c3-6824-4f78-80e5-a3e66e490e25",
+                            "displayText": "test3 - partial"
+                        }
+                    ]
+                },
+                {
+                    "guid": "abc6ac1b-5700-9c70-3f5a-60a519150035",
+                    "qualifiedName": "Category4@Default category 2",
+                    "name": "Category4",
+                    "anchor": {
+                        "glossaryGuid": "c0c54153-13d1-1608-13af-43457cdf1234",
+                        "relationGuid": "c36f0116-17ef-4baa-b953-20413ac035ab"
+                    }
+                }
+            ]
+        }
+    }
+}

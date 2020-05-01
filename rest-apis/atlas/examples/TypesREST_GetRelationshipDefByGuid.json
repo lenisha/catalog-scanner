@@ -1,0 +1,53 @@
+{
+    "parameters": {
+        "guid": "695edde1-2782-4a3c-841b-0b3aba25fe45"
+    },
+    "responses": {
+        "200": {
+            "headers": {
+                "Access-Control-Allow-Headers": "authorization,content-type,x-xsrf-header,x-ms-client-request-id",
+                "Access-Control-Allow-Methods": "GET,OPTIONS,HEAD,PUT,POST,DELETE,PATCH",
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Expose-Headers": "x-ms-request-id",
+                "Content-Type": "application/json; charset=UTF-8",
+                "Server": "Jetty(9.3.14.v20161028)",
+                "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+                "Transfer-Encoding": "chunked",
+                "X-Content-Type-Options": "nosniff",
+                "X-Frame-Options": "DENY",
+                "x-ms-request-id": "97930d08-0a53-4bb5-a352-08e7761bf20a",
+                "X-XSS-Protection": "1; mode=block"
+            },
+            "body": {
+                "category": "RELATIONSHIP",
+                "guid": "695edde1-2782-4a3c-841b-0b3aba25fe45",
+                "createdBy": "vsts",
+                "updatedBy": "vsts",
+                "createTime": 1553065976797,
+                "updateTime": 1553065976797,
+                "version": 1,
+                "name": "storm_topology_nodes",
+                "description": "storm_topology_nodes",
+                "typeVersion": "1.0",
+                "attributeDefs": [],
+                "relationshipCategory": "ASSOCIATION",
+                "propagateTags": "NONE",
+                "endDef1": {
+                    "type": "storm_topology",
+                    "name": "nodes",
+                    "isContainer": false,
+                    "cardinality": "SET",
+                    "isLegacyAttribute": true
+                },
+                "endDef2": {
+                    "type": "storm_node",
+                    "name": "topolgies",
+                    "isContainer": false,
+                    "cardinality": "SET",
+                    "isLegacyAttribute": false
+                },
+                "relationshipLabel": "r:storm_topology_nodes"
+            }
+        }
+    }
+}

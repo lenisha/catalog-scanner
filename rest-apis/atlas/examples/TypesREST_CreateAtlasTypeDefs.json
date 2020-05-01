@@ -1,0 +1,85 @@
+{
+    "parameters": {
+      "typesDef": {
+        "enumDefs": [],
+        "structDefs": [],
+        "classificationDefs": [],
+        "entityDefs": [
+          {
+            "name": "azure_sql_server_test",
+            "superTypes": [
+              "azure_resource"
+            ],
+            "typeVersion": "1.0",
+            "attributeDefs": [
+              {
+                "name": "databases",
+                "typeName": "array<azure_sql_db>",
+                "cardinality": "SET",
+                "isIndexable": false,
+                "isOptional": true,
+                "isUnique": false
+              }
+            ]
+          }
+        ],
+        "relationshipDefs": [
+        ]
+      }
+    },
+    "responses": {
+      "200": {
+        "headers": {
+          "Access-Control-Allow-Headers": "authorization,content-type,x-xsrf-header,x-ms-client-request-id",
+          "Access-Control-Allow-Methods": "GET,OPTIONS,HEAD,PUT,POST,DELETE,PATCH",
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Expose-Headers": "x-ms-request-id",
+          "Content-Type": "application/json; charset=UTF-8",
+          "Server": "Jetty(9.3.14.v20161028)",
+          "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+          "Transfer-Encoding": "chunked",
+          "X-Content-Type-Options": "nosniff",
+          "X-Frame-Options": "DENY",
+          "x-ms-request-id": "97930d08-0a53-4bb5-a352-08e7761bf20a",
+          "X-XSS-Protection": "1; mode=block"
+        },
+        "body": {
+            "enumDefs": [],
+            "structDefs": [],
+            "classificationDefs": [],
+            "entityDefs": [
+                {
+                    "category": "ENTITY",
+                    "guid": "a47fd902-a564-45f1-aa51-ce9224955881",
+                    "createdBy": "ServiceAdmin",
+                    "updatedBy": "ServiceAdmin",
+                    "createTime": 1553672211954,
+                    "updateTime": 1553672211954,
+                    "version": 1,
+                    "name": "azure_sql_server_test",
+                    "description": "azure_sql_server_test",
+                    "typeVersion": "1.0",
+                    "attributeDefs": [
+                        {
+                            "name": "databases",
+                            "typeName": "array<azure_sql_db>",
+                            "isOptional": true,
+                            "cardinality": "SET",
+                            "valuesMinCount": 0,
+                            "valuesMaxCount": 2147483647,
+                            "isUnique": false,
+                            "isIndexable": false,
+                            "includeInNotification": false
+                        }
+                    ],
+                    "superTypes": [
+                        "azure_resource"
+                    ],
+                    "subTypes": []
+                }
+            ],
+            "relationshipDefs": []
+        }
+      }
+    }
+  }

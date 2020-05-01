@@ -1,0 +1,128 @@
+{
+    "parameters": {
+        "suggestRequest": {
+            "keywords": "test",
+            "filter": {
+                "and": [
+                    {
+                        "typeName": "Asset",
+                        "includeSubTypes": true
+                    }
+                ]
+            },
+            "limit": 10
+        }
+    },
+    "responses": {
+        "200": {
+            "headers": {
+                "Access-Control-Allow-Headers": "authorization,content-type,x-xsrf-header,x-ms-client-request-id",
+                "Access-Control-Allow-Methods": "GET,OPTIONS,HEAD,PUT,POST,DELETE,PATCH",
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Expose-Headers": "x-ms-request-id",
+                "Content-Type": "application/json; charset=UTF-8",
+                "Server": "Jetty(9.3.14.v20161028)",
+                "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+                "Transfer-Encoding": "chunked",
+                "X-Content-Type-Options": "nosniff",
+                "X-Frame-Options": "DENY",
+                "x-ms-request-id": "97930d08-0a53-4bb5-a352-08e7761bf20a",
+                "X-XSS-Protection": "1; mode=block"
+            },
+            "body": {
+                "value": [
+                    {
+                        "@search.text": "mssql://hdunittest.database.windows.net/<em>Test</em>",
+                        "description": null,
+                        "id": "7a5173b3-d2c4-e8d9-d384-94c4b37bf2f5",
+                        "name": "Test",
+                        "owner": null,
+                        "qualifiedName": "mssql://hdunittest.database.windows.net/Test",
+                        "typeName": "azure_sql_db"
+                    },
+                    {
+                        "@search.text": "adl://adlstest.azuredatalakestore.net/123/1/DP_TFS/Product/ResourceProvider/tip/RPTipRunner/App.config#:xml/configuration/<em>Test</em>",
+                        "description": null,
+                        "id": "a6894eb3-81f3-829b-2adc-52f3e603411a",
+                        "name": ":xml/configuration/Test",
+                        "owner": null,
+                        "qualifiedName": "adl://adlstest.azuredatalakestore.net/123/1/DP_TFS/Product/ResourceProvider/tip/RPTipRunner/App.config#:xml/configuration/Test",
+                        "typeName": "column"
+                    },
+                    {
+                        "@search.text": "adl://adlstest.azuredatalakestore.net/123/1/DP_TFS/Product/Orchestration/tip/OrchestrationTipRunner/App.config#:xml/configuration/<em>Test</em>",
+                        "description": null,
+                        "id": "47a59ae8-7751-1988-cfbe-a36134d8017c",
+                        "name": ":xml/configuration/Test",
+                        "owner": null,
+                        "qualifiedName": "adl://adlstest.azuredatalakestore.net/123/1/DP_TFS/Product/Orchestration/tip/OrchestrationTipRunner/App.config#:xml/configuration/Test",
+                        "typeName": "column"
+                    },
+                    {
+                        "@search.text": "adl://adlstest.azuredatalakestore.net/123/1/DP_TFS/Product/Execution/tip/ServiceBusExecutorTipRunner/App.config#:xml/configuration/<em>Test</em>",
+                        "description": null,
+                        "id": "331fc547-2d4a-3632-71dc-b82ce676142e",
+                        "name": ":xml/configuration/Test",
+                        "owner": null,
+                        "qualifiedName": "adl://adlstest.azuredatalakestore.net/123/1/DP_TFS/Product/Execution/tip/ServiceBusExecutorTipRunner/App.config#:xml/configuration/Test",
+                        "typeName": "column"
+                    },
+                    {
+                        "@search.text": "adl://adlstest.azuredatalakestore.net/123/1/DP_TFS/Product/<em>Test</em>/TestSuites/Tip/<em>Test.Runners.Breaking/TestConfig/Test</em>Config_ProdNorthEU.ScaleUnit03.xml#:xml/TestConfiguration/<em>Test</em>Folder",
+                        "description": null,
+                        "id": "da8cc1dd-2878-c0d1-4b9f-fd09ce690348",
+                        "name": "TestFolder",
+                        "owner": null,
+                        "qualifiedName": "adl://adlstest.azuredatalakestore.net/123/1/DP_TFS/Product/Test/TestSuites/Tip/Test.Runners.Breaking/TestConfig/TestConfig_ProdNorthEU.ScaleUnit03.xml#:xml/TestConfiguration/TestFolder",
+                        "typeName": "column"
+                    },
+                    {
+                        "@search.text": "adl://adlstest.azuredatalakestore.net/123/1/DP_TFS/Product/<em>Test</em>/TestSuites/Tip/<em>Test.Runners.Breaking/TestConfig/TestConfig_ProdNorthEU.xml#:xml/Test</em>Configuration/Schedule/@<em>Test</em>Group",
+                        "description": null,
+                        "id": "45b074d2-e7c4-1771-4e07-9fa9f4f536ad",
+                        "name": "~TestGroup",
+                        "owner": null,
+                        "qualifiedName": "adl://adlstest.azuredatalakestore.net/123/1/DP_TFS/Product/Test/TestSuites/Tip/Test.Runners.Breaking/TestConfig/TestConfig_ProdNorthEU.xml#:xml/TestConfiguration/Schedule/@TestGroup",
+                        "typeName": "column"
+                    },
+                    {
+                        "@search.text": "adl://adlstest.azuredatalakestore.net/123/1/DP_TFS/Product/<em>Test</em>/TestSuites/Tip/<em>Test.Runners.Breaking/TestConfig/TestConfig_ProdNorthEU.xml#:xml/Test</em>Configuration/TestFolder",
+                        "description": null,
+                        "id": "393bafc8-bbae-da00-c0b2-9bedf7a82f75",
+                        "name": "TestFolder",
+                        "owner": null,
+                        "qualifiedName": "adl://adlstest.azuredatalakestore.net/123/1/DP_TFS/Product/Test/TestSuites/Tip/Test.Runners.Breaking/TestConfig/TestConfig_ProdNorthEU.xml#:xml/TestConfiguration/TestFolder",
+                        "typeName": "column"
+                    },
+                    {
+                        "@search.text": "adl://adlstest.azuredatalakestore.net/123/1/DP_TFS/Product/ResourceProvider/tip/RPTipRunner/<em>TestResources/RPTestConfig10m.xml#:xml/Test</em>Configuration/TestFolder",
+                        "description": null,
+                        "id": "e2ae7274-7a54-4fba-1e7d-52efa689fd7b",
+                        "name": "TestFolder",
+                        "owner": null,
+                        "qualifiedName": "adl://adlstest.azuredatalakestore.net/123/1/DP_TFS/Product/ResourceProvider/tip/RPTipRunner/TestResources/RPTestConfig10m.xml#:xml/TestConfiguration/TestFolder",
+                        "typeName": "column"
+                    },
+                    {
+                        "@search.text": "adl://adlstest.azuredatalakestore.net/123/1/DP_TFS/Product/Orchestration/tip/OrchestrationTipRunner/<em>TestResources/OrchestrationTestConfig10m.xml#:xml/Test</em>Configuration/Schedule/@<em>Test</em>Group",
+                        "description": null,
+                        "id": "1321e04f-089e-93a7-e342-db1b4e54a969",
+                        "name": "~TestGroup",
+                        "owner": null,
+                        "qualifiedName": "adl://adlstest.azuredatalakestore.net/123/1/DP_TFS/Product/Orchestration/tip/OrchestrationTipRunner/TestResources/OrchestrationTestConfig10m.xml#:xml/TestConfiguration/Schedule/@TestGroup",
+                        "typeName": "column"
+                    },
+                    {
+                        "@search.text": "adl://adlstest.azuredatalakestore.net/123/1/DP_TFS/Product/<em>Test</em>/TestSuites/Tip/<em>Test.Runners.Breaking/TestConfig/Test</em>Config_ProdNorthEU.ScaleUnit04.xml#:xml/TestConfiguration/<em>Test</em>Folder",
+                        "description": null,
+                        "id": "7aeb74b6-b8af-de5f-de92-af9a81138461",
+                        "name": "TestFolder",
+                        "owner": null,
+                        "qualifiedName": "adl://adlstest.azuredatalakestore.net/123/1/DP_TFS/Product/Test/TestSuites/Tip/Test.Runners.Breaking/TestConfig/TestConfig_ProdNorthEU.ScaleUnit04.xml#:xml/TestConfiguration/TestFolder",
+                        "typeName": "column"
+                    }
+                ]
+            }
+        }
+    }
+}

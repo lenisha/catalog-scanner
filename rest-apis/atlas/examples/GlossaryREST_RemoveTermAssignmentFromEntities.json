@@ -1,0 +1,29 @@
+{
+    "parameters": {
+        "termGuid": "8a7f65ec-6429-0b9b-3734-ec57bf1e34c2",
+        "relatedObjectIds": [
+            {
+                "guid": "16feb2a1-2c79-ade1-338d-fb24fcb8b8bd",
+                "relationshipGuid": "624f08bb-3c93-4f03-9ce1-ed2ce2c7c8d5"
+            }
+        ]
+    },
+    "responses": {
+        "204": {
+            "headers": {
+                "Access-Control-Allow-Headers": "authorization,content-type,x-xsrf-header,x-ms-client-request-id",
+                "Access-Control-Allow-Methods": "GET,OPTIONS,HEAD,PUT,POST,DELETE,PATCH",
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Expose-Headers": "x-ms-request-id",
+                "Content-Type": "application/json; charset=UTF-8",
+                "Server": "Jetty(9.3.14.v20161028)",
+                "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+                "Transfer-Encoding": "chunked",
+                "X-Content-Type-Options": "nosniff",
+                "X-Frame-Options": "DENY",
+                "x-ms-request-id": "97930d08-0a53-4bb5-a352-08e7761bf20a",
+                "X-XSS-Protection": "1; mode=block"
+            }
+        }
+    }
+}

@@ -1,0 +1,50 @@
+{
+  "parameters": {
+    "x-ms-account-id": "12345678-1234-1234-12345678abc",
+    "dataSourceName": "DataSource1",
+    "scanName": "scan1",
+    "api-version": "2018-12-01-preview"
+  },
+  "responses": {
+    "200": {
+      "headers": {
+        "Date": "Wed, 13 Sep 2017 18:04:32 GMT",
+        "x-ms-request-id": "d5496da4-9c52-402f-b067-83cc9ddea888",
+        "X-Content-Type-Options": "nosniff",
+        "x-ms-ratelimit-remaining-tenant-reads": "14999",
+        "x-ms-correlation-request-id": "25c78f97-0b0a-4fe9-ad39-883a482265cd"
+      },
+      "body": {
+        "value": [
+          {
+            "id": "556ac46f-bd42-4e84-b1f5-2ac335384b9b",
+            "status": "Running",
+            "assetsDiscovered": 950,
+            "assetsClassified": 345,
+            "startTime": "2018-11-14T04:47:52.9614956Z",
+            "runType": "Manual"
+          },
+          {
+            "id": "6346cde3-467e-41f1-9436-af096fd83247",
+            "status": "Succeeded",
+            "assetsDiscovered": 950,
+            "assetsClassified": 945,
+            "startTime": "2018-11-14T04:47:52.9614956Z",
+            "endTime": "2018-11-14T05:17:52.9614956Z",
+            "runType": "Scheduled"
+          },
+          {
+            "id": "565e518f-da15-486d-8f0d-5269ea404df6",
+            "status": "Failed",
+            "assetsDiscovered": 0,
+            "assetsClassified": 0,
+            "startTime": "2018-11-14T04:47:52.9614956Z",
+            "endTime": "2018-11-14T05:17:52.9614956Z",
+            "errorMessage": "You did a bad thing",
+            "runType": "Manual"
+          }
+        ]
+      }
+    }
+  }
+}

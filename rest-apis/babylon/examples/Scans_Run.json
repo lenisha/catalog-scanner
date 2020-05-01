@@ -1,0 +1,44 @@
+{
+    "parameters": {
+        "x-ms-account-id": "guid-guid",
+        "dataSourceName": "testDataSourceName",
+        "scanName": "scan1",
+        "api-version": "2018-12-01-preview",
+        "scanRunProperties": {
+            "scanLevel": "Full",
+            "incrementalScanStartTime": "2019-05-16T17:01:37.3089193Z"
+        }
+    },
+    "responses": {
+        "200": {
+            "headers": {
+                "Date": "Wed, 13 Sep 2017 18:04:32 GMT",
+                "x-ms-request-id": "00000000-0000-0000-0000-00000000000",
+                "X-Content-Type-Options": "nosniff",
+                "x-ms-ratelimit-remaining-tenant-reads": "14999",
+                "x-ms-correlation-request-id": "25c78f97-0b0a-4fe9-ad39-883a482265cd"
+            },
+            "body": {
+                "startTime": "2019-05-16T17:01:37.3089193Z",
+                "endTime": null,
+                "status": "Accepted",
+                "error": null
+            }
+        },
+        "202": {
+            "headers": {
+                "Date": "Wed, 13 Sep 2017 18:04:32 GMT",
+                "x-ms-request-id": "00000000-0000-0000-0000-00000000000",
+                "X-Content-Type-Options": "nosniff",
+                "x-ms-ratelimit-remaining-tenant-reads": "14999",
+                "x-ms-correlation-request-id": "25c78f97-0b0a-4fe9-ad39-883a482265cd"
+            },
+            "body": {
+                "startTime": "2019-05-16T17:01:37.3089193Z",
+                "endTime": null,
+                "status": "Accepted",
+                "error": null
+            }
+        }
+    }
+}

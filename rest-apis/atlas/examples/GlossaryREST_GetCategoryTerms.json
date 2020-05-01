@@ -1,0 +1,33 @@
+{
+    "parameters": {
+        "categoryGuid": "56ca656a-e3a5-0c8c-eace-e0ab4d528975",
+        "limit": "-1",
+        "offset": "0",
+        "sort": "ASC"
+    },
+    "responses": {
+        "200": {
+            "headers": {
+                "Access-Control-Allow-Headers": "authorization,content-type,x-xsrf-header,x-ms-client-request-id",
+                "Access-Control-Allow-Methods": "GET,OPTIONS,HEAD,PUT,POST,DELETE,PATCH",
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Expose-Headers": "x-ms-request-id",
+                "Content-Type": "application/json; charset=UTF-8",
+                "Server": "Jetty(9.3.14.v20161028)",
+                "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+                "Transfer-Encoding": "chunked",
+                "X-Content-Type-Options": "nosniff",
+                "X-Frame-Options": "DENY",
+                "x-ms-request-id": "97930d08-0a53-4bb5-a352-08e7761bf20a",
+                "X-XSS-Protection": "1; mode=block"
+            },
+            "body": [
+                {
+                    "termGuid": "6f420602-48e8-ae0d-042f-1518ff310330",
+                    "relationGuid": "5b4e23c3-6824-4f78-80e5-a3e66e490e25",
+                    "displayText": "test3 - partial"
+                }
+            ]
+        }
+    }
+}

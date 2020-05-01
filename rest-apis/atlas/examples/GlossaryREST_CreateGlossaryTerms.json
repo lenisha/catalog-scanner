@@ -1,0 +1,68 @@
+{
+    "parameters": {
+        "glossaryTerm": [
+            {
+                "name": "test5",
+                "shortDescription": "short desc 5",
+                "longDescription": "long desc 5",
+                "abbreviation": "T5",
+                "anchor": {
+                    "glossaryGuid": "c0c54153-13d1-1608-13af-43457cdf1234"
+                }
+            },
+            {
+                "name": "test6",
+                "shortDescription": "short desc 6",
+                "longDescription": "long desc 6",
+                "abbreviation": "T6",
+                "anchor": {
+                    "glossaryGuid": "c0c54153-13d1-1608-13af-43457cdf1234"
+                }
+            }
+        ]
+    },
+    "responses": {
+        "200": {
+            "headers": {
+                "Access-Control-Allow-Headers": "authorization,content-type,x-xsrf-header,x-ms-client-request-id",
+                "Access-Control-Allow-Methods": "GET,OPTIONS,HEAD,PUT,POST,DELETE,PATCH",
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Expose-Headers": "x-ms-request-id",
+                "Content-Type": "application/json; charset=UTF-8",
+                "Server": "Jetty(9.3.14.v20161028)",
+                "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+                "Transfer-Encoding": "chunked",
+                "X-Content-Type-Options": "nosniff",
+                "X-Frame-Options": "DENY",
+                "x-ms-request-id": "97930d08-0a53-4bb5-a352-08e7761bf20a",
+                "X-XSS-Protection": "1; mode=block"
+            },
+            "body": [
+                {
+                    "guid": "7da9b66b-eb91-8a4a-5021-4aef11172fb2",
+                    "qualifiedName": "test5@Default category 2",
+                    "name": "test5",
+                    "shortDescription": "short desc 5",
+                    "longDescription": "long desc 5",
+                    "abbreviation": "T5",
+                    "anchor": {
+                        "glossaryGuid": "c0c54153-13d1-1608-13af-43457cdf1234",
+                        "relationGuid": "a1ca3b46-1d32-4f76-9a38-a46ab8fe703a"
+                    }
+                },
+                {
+                    "guid": "4941ee0c-404a-949a-bdcb-0564e5d4863e",
+                    "qualifiedName": "test6@Default category 2",
+                    "name": "test6",
+                    "shortDescription": "short desc 6",
+                    "longDescription": "long desc 6",
+                    "abbreviation": "T6",
+                    "anchor": {
+                        "glossaryGuid": "c0c54153-13d1-1608-13af-43457cdf1234",
+                        "relationGuid": "b3d26d1f-1f57-4811-84d9-5fa5b0b51644"
+                    }
+                }
+            ]
+        }
+    }
+}

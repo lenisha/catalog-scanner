@@ -1,0 +1,42 @@
+{
+    "parameters": {
+        "categoryGuid": "3243ea0a-9492-47e1-392e-a84e64980af9",
+        "limit": "-1",
+        "offset": "0",
+        "sort": "ASC"
+    },
+    "responses": {
+        "200": {
+            "headers": {
+                "Access-Control-Allow-Headers": "authorization,content-type,x-xsrf-header,x-ms-client-request-id",
+                "Access-Control-Allow-Methods": "GET,OPTIONS,HEAD,PUT,POST,DELETE,PATCH",
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Expose-Headers": "x-ms-request-id",
+                "Content-Type": "application/json; charset=UTF-8",
+                "Server": "Jetty(9.3.14.v20161028)",
+                "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+                "Transfer-Encoding": "chunked",
+                "X-Content-Type-Options": "nosniff",
+                "X-Frame-Options": "DENY",
+                "x-ms-request-id": "97930d08-0a53-4bb5-a352-08e7761bf20a",
+                "X-XSS-Protection": "1; mode=block"
+            },
+            "body": {
+                "parent": [
+                    {
+                        "categoryGuid": "6c8233cd-f6dc-6ef7-5597-b18ab590f2fc",
+                        "relationGuid": "25cf5e46-c551-4ed4-8919-505c29ae311d"
+                    }
+                ],
+                "children": [
+                    {
+                        "categoryGuid": "abc6ac1b-5700-9c70-3f5a-60a519150035",
+                        "parentCategoryGuid": "3243ea0a-9492-47e1-392e-a84e64980af9",
+                        "relationGuid": "12d41563-2fd9-4be5-9eb9-9908f811a8f2",
+                        "displayText": "Category4"
+                    }
+                ]
+            }
+        }
+    }
+}

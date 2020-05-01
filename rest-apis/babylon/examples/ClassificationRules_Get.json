@@ -1,0 +1,53 @@
+{
+  "parameters": {
+    "subscriptionId": "12345678-1234-1234-12345678abc",
+    "resourceGroupName": "SampleResourceGroup",
+    "dataCatalogName": "Catalog1",
+    "classificationRuleName": "ClassificationRule1",
+    "api-version": "2018-12-01-preview"
+  },
+  "responses": {
+    "200": {
+      "headers": {
+        "Date": "Wed, 13 Sep 2017 18:04:32 GMT",
+        "x-ms-request-id": "d5496da4-9c52-402f-b067-83cc9ddea888",
+        "X-Content-Type-Options": "nosniff",
+        "x-ms-ratelimit-remaining-tenant-reads": "14999",
+        "x-ms-correlation-request-id": "25c78f97-0b0a-4fe9-ad39-883a482265cd"
+      },
+      "body": {
+        "id": "/subscriptions/12345678-1234-1234-12345678abc/resourceGroups/SampleResourceGroup/providers/Microsoft.DataCatalog/DataCatalogs/Catalog1/ClassificationRules/ClassificationRule1",
+        "name": "ClassificationRule1",
+        "kind": "Custom",
+        "properties": {
+          "minimumDistinctMatchCount": 3,
+          "minimumPercentageMatch": 80,
+          "classificationAction": "Keep",
+          "description": "second one",
+          "version": 4,
+          "classificationName": "CUSTOM.TEST.TWO",
+          "owner": "some@b.com",
+          "ruleStatus": "Enabled",
+          "createdAt": "2019-12-09T06:43:30.8478469Z",
+          "lastModifiedAt": "2019-12-09T07:04:53.2807344Z",
+          "dataPatterns": [
+            {
+              "kind": "Regex",
+              "pattern": "^data1$"
+            },
+            {
+              "kind": "Regex",
+              "pattern": "^data2$"
+            }
+          ],
+          "columnPatterns": [
+            {
+              "kind": "Regex",
+              "pattern": "^column1$"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

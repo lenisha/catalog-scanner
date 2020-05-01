@@ -1,0 +1,4159 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "MicrosoftScanningClient",
+    "description": "Creates a Microsoft.Scanning management client.",
+    "version": "2018-12-01-preview"
+  },
+  "paths": {
+    "/classificationrules/{classificationRuleName}": {
+      "get": {
+        "tags": [
+          "ClassificationRules"
+        ],
+        "description": "Get a classification rule",
+        "operationId": "ClassificationRules_Get",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "classificationRuleName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-id"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-name"
+          },
+          {
+            "$ref": "#/parameters/api-version"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ClassificationRule"
+            }
+          },
+          "default": {
+            "description": "An error response received from the Scanning Service",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponseModel"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "ClassificationRules_Get": {
+            "$ref": "./examples/ClassificationRules_Get.json"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "ClassificationRules"
+        ],
+        "description": "Creates or Updates a classification rule",
+        "operationId": "ClassificationRules_CreateOrUpdate",
+        "consumes": [
+          "application/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "classificationRuleName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-id"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-name"
+          },
+          {
+            "$ref": "#/parameters/api-version"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ClassificationRule"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ClassificationRule"
+            }
+          },
+          "201": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ClassificationRule"
+            }
+          },
+          "default": {
+            "description": "An error response received from the Scanning Service",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponseModel"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "ClassificationRules_CreateOrUpdate": {
+            "$ref": "./examples/ClassificationRules_CreateOrUpdate.json"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ClassificationRules"
+        ],
+        "description": "Deletes a classification rule",
+        "operationId": "ClassificationRules_Delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "classificationRuleName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-id"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-name"
+          },
+          {
+            "$ref": "#/parameters/api-version"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "202": {
+            "description": "Success"
+          },
+          "204": {
+            "description": "Success"
+          },
+          "default": {
+            "description": "An error response received from the Scanning Service",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponseModel"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "ClassificationRules_Delete": {
+            "$ref": "./examples/ClassificationRules_Delete.json"
+          }
+        }
+      }
+    },
+    "/classificationrules": {
+      "get": {
+        "tags": [
+          "ClassificationRules"
+        ],
+        "description": "List classification rules in Account",
+        "operationId": "ClassificationRules_ListAll",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$skipToken",
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-id"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-name"
+          },
+          {
+            "$ref": "#/parameters/api-version"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ClassificationRuleList"
+            }
+          },
+          "default": {
+            "description": "An error response received from the Scanning Service",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponseModel"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "ClassificationRules_ListAll": {
+            "$ref": "./examples/ClassificationRules_ListAll.json"
+          }
+        }
+      }
+    },
+    "/classificationrules/{classificationRuleName}/versions": {
+      "get": {
+        "tags": [
+          "ClassificationRules"
+        ],
+        "description": "Lists the rule versions of a classification rule",
+        "operationId": "ClassificationRules_ListVersionsByClassificationRuleName",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "classificationRuleName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$skipToken",
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-id"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-name"
+          },
+          {
+            "$ref": "#/parameters/api-version"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ClassificationRuleList"
+            }
+          },
+          "default": {
+            "description": "An error response received from the Scanning Service",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponseModel"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "ClassificationRules_ListVersionsByClassificationRuleName": {
+            "$ref": "./examples/ClassificationRules_ListVersionsByClassificationRuleName.json"
+          }
+        }
+      }
+    },
+    "/classificationrules/{classificationRuleName}/versions/{classificationRuleVersion}/setclassificationaction": {
+      "post": {
+        "tags": [
+          "ClassificationRules"
+        ],
+        "description": "Sets Classification Action on a specific classification rule version.",
+        "operationId": "ClassificationRules_SetClassificationActionForVersion",
+        "consumes": [
+          "application/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "classificationRuleName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "classificationRuleVersion",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-id"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-name"
+          },
+          {
+            "$ref": "#/parameters/api-version"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ClassificationRuleVersionAction"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/OperationResponse"
+            }
+          },
+          "202": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/OperationResponse"
+            }
+          },
+          "default": {
+            "description": "An error response received from the Scanning Service",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponseModel"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "ClassificationRules_SetClassificationActionForVersion": {
+            "$ref": "./examples/ClassificationRules_SetClassificationActionForVersion.json"
+          }
+        }
+      }
+    },
+    "/datasources/{dataSourceName}": {
+      "put": {
+        "tags": [
+          "DataSources"
+        ],
+        "description": "Creates or Updates a data source",
+        "operationId": "DataSources_CreateOrUpdate",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "dataSourceName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-id"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-name"
+          },
+          {
+            "$ref": "#/parameters/api-version"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/DataSource"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/DataSource"
+            }
+          },
+          "201": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/DataSource"
+            }
+          },
+          "default": {
+            "description": "An error response received from the Scanning Service",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponseModel"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "DataSources_CreateOrUpdate": {
+            "$ref": "./examples/DataSources_CreateOrUpdate.json"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "DataSources"
+        ],
+        "description": "Get a data source",
+        "operationId": "DataSources_Get",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "dataSourceName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-id"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-name"
+          },
+          {
+            "$ref": "#/parameters/api-version"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/DataSource"
+            }
+          },
+          "default": {
+            "description": "An error response received from the Scanning Service",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponseModel"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "DataSources_Get": {
+            "$ref": "./examples/DataSources_Get.json"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "DataSources"
+        ],
+        "description": "Deletes a data source",
+        "operationId": "DataSources_Delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "dataSourceName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-id"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-name"
+          },
+          {
+            "$ref": "#/parameters/api-version"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "202": {
+            "description": "Success"
+          },
+          "204": {
+            "description": "Success"
+          },
+          "default": {
+            "description": "An error response received from the Scanning Service",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponseModel"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "DataSources_Delete": {
+            "$ref": "./examples/DataSources_Delete.json"
+          }
+        }
+      }
+    },
+    "/datasources": {
+      "get": {
+        "tags": [
+          "DataSources"
+        ],
+        "description": "List data sources in Data catalog",
+        "operationId": "DataSources_ListByAccount",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$skipToken",
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-id"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-name"
+          },
+          {
+            "$ref": "#/parameters/api-version"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/DataSourceList"
+            }
+          },
+          "default": {
+            "description": "An error response received from the Scanning Service",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponseModel"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "DataSources_ListByAccount": {
+            "$ref": "./examples/DataSources_ListByAccount.json"
+          }
+        }
+      }
+    },
+    "/datasources/{dataSourceName}/scans/{scanName}/filters/custom": {
+      "get": {
+        "tags": [
+          "Filters"
+        ],
+        "description": "Get a filter",
+        "operationId": "Filters_Get",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "dataSourceName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "scanName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-id"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-name"
+          },
+          {
+            "$ref": "#/parameters/api-version"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Filter"
+            }
+          },
+          "default": {
+            "description": "An error response received from the Scanning Service",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponseModel"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Filters_Get": {
+            "$ref": "./examples/Filters_Get.json"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Filters"
+        ],
+        "description": "Creates or updates a filter",
+        "operationId": "Filters_CreateOrUpdate",
+        "consumes": [
+          "application/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "dataSourceName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "scanName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-id"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-name"
+          },
+          {
+            "$ref": "#/parameters/api-version"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/Filter"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Filter"
+            }
+          },
+          "201": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Filter"
+            }
+          },
+          "default": {
+            "description": "An error response received from the Scanning Service",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponseModel"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Filters_CreateOrUpdate": {
+            "$ref": "./examples/Filters_CreateOrUpdate.json"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Filters"
+        ],
+        "description": "Deletes a filter",
+        "operationId": "Filters_Delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "dataSourceName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "scanName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-id"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-name"
+          },
+          {
+            "$ref": "#/parameters/api-version"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "202": {
+            "description": "Success"
+          },
+          "204": {
+            "description": "Success"
+          },
+          "default": {
+            "description": "An error response received from the Scanning Service",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponseModel"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Filters_Delete": {
+            "$ref": "./examples/Filters_Delete.json"
+          }
+        }
+      }
+    },
+    "/datasources/{dataSourceName}/scans/{scanName}/filters": {
+      "get": {
+        "tags": [
+          "Filters"
+        ],
+        "description": "List filters in Scan",
+        "operationId": "Filters_ListByScan",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "dataSourceName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "scanName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$skipToken",
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-id"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-name"
+          },
+          {
+            "$ref": "#/parameters/api-version"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/FilterList"
+            }
+          },
+          "default": {
+            "description": "An error response received from the Scanning Service",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponseModel"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Filters_ListByScan": {
+            "$ref": "./examples/Filters_ListByScan.json"
+          }
+        }
+      }
+    },
+    "/datasources/{dataSourceName}/scans/{scanName}/run": {
+      "post": {
+        "tags": [
+          "Scan"
+        ],
+        "description": "Runs the scan",
+        "operationId": "Scans_Run",
+        "consumes": [
+          "application/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "dataSourceName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "scanName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-id"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-name"
+          },
+          {
+            "$ref": "#/parameters/api-version"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ScanRunProperties"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/OperationResponse"
+            }
+          },
+          "202": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/OperationResponse"
+            }
+          },
+          "default": {
+            "description": "An error response received from the Scanning Service",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponseModel"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Scans_Run": {
+            "$ref": "./examples/Scans_Run.json"
+          }
+        }
+      }
+    },
+    "/datasources/{dataSourceName}/scans/{scanName}/cancel": {
+      "post": {
+        "tags": [
+          "Scan"
+        ],
+        "description": "Cancels a scan",
+        "operationId": "Scans_Cancel",
+        "consumes": [
+          "application/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "dataSourceName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "scanName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-id"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-name"
+          },
+          {
+            "$ref": "#/parameters/api-version"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CancelScanRequest"
+            }
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Accepted"
+          },
+          "default": {
+            "description": "An error response received from the Scanning Service",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponseModel"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Scans_Cancel": {
+            "$ref": "./examples/Scans_Cancel.json"
+          }
+        }
+      }
+    },
+    "/datasources/{dataSourceName}/scans/{scanName}/listHistory": {
+      "post": {
+        "tags": [
+          "Scan"
+        ],
+        "description": "Lists the scan history of a scan",
+        "operationId": "Scans_ListHistory",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "dataSourceName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "scanName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$skipToken",
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-id"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-name"
+          },
+          {
+            "$ref": "#/parameters/api-version"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ScanHistoryList"
+            }
+          },
+          "default": {
+            "description": "An error response received from the Scanning Service",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponseModel"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Scans_ListHistory": {
+            "$ref": "./examples/Scans_ListHistory.json"
+          }
+        }
+      }
+    },
+    "/datasources/{dataSourceName}/scans/{scanName}": {
+      "put": {
+        "tags": [
+          "Scan"
+        ],
+        "description": "Creates an instance of a scan",
+        "operationId": "Scans_CreateOrUpdate",
+        "consumes": [
+          "application/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "dataSourceName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "scanName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-id"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-name"
+          },
+          {
+            "$ref": "#/parameters/api-version"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Scan"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Scan"
+            }
+          },
+          "201": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Scan"
+            }
+          },
+          "default": {
+            "description": "An error response received from the Scanning Service",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponseModel"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Scans_CreateOrUpdate": {
+            "$ref": "./examples/Scans_CreateOrUpdate.json"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Scan"
+        ],
+        "description": "Gets a scan information",
+        "operationId": "Scans_Get",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "dataSourceName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "scanName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-id"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-name"
+          },
+          {
+            "$ref": "#/parameters/api-version"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Scan"
+            }
+          },
+          "default": {
+            "description": "An error response received from the Scanning Service",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponseModel"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Scans_Get": {
+            "$ref": "./examples/Scans_Get.json"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Scan"
+        ],
+        "description": "Deletes the scan associated with the data source",
+        "operationId": "Scans_Delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "dataSourceName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "scanName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-id"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-name"
+          },
+          {
+            "$ref": "#/parameters/api-version"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "202": {
+            "description": "Success"
+          },
+          "204": {
+            "description": "Success"
+          },
+          "default": {
+            "description": "An error response received from the Scanning Service",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponseModel"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Scans_Delete": {
+            "$ref": "./examples/Scans_Delete.json"
+          }
+        }
+      }
+    },
+    "/datasources/{dataSourceName}/scans": {
+      "get": {
+        "tags": [
+          "Scan"
+        ],
+        "description": "List scans in data source",
+        "operationId": "Scans_ListByDataSource",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "dataSourceName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$skipToken",
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-id"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-name"
+          },
+          {
+            "$ref": "#/parameters/api-version"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ScanList"
+            }
+          },
+          "default": {
+            "description": "An error response received from the Scanning Service",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponseModel"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Scans_ListByDataSource": {
+            "$ref": "./examples/Scans_ListByDataSource.json"
+          }
+        }
+      }
+    },
+    "/scanrulesets/{scanRulesetName}": {
+      "get": {
+        "tags": [
+          "ScanRulesets"
+        ],
+        "description": "Get a scan ruleset",
+        "operationId": "ScanRulesets_Get",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "scanRulesetName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-id"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-name"
+          },
+          {
+            "$ref": "#/parameters/api-version"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ScanRuleset"
+            }
+          },
+          "default": {
+            "description": "An error response received from the Scanning Service",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponseModel"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "ScanRulesets_Get": {
+            "$ref": "./examples/ScanRulesets_Get.json"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "ScanRulesets"
+        ],
+        "description": "Creates or Updates a scan ruleset",
+        "operationId": "ScanRulesets_CreateOrUpdate",
+        "consumes": [
+          "application/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "scanRulesetName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-id"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-name"
+          },
+          {
+            "$ref": "#/parameters/api-version"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ScanRuleset"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ScanRuleset"
+            }
+          },
+          "201": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ScanRuleset"
+            }
+          },
+          "default": {
+            "description": "An error response received from the Scanning Service",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponseModel"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "ScanRulesets_CreateOrUpdate": {
+            "$ref": "./examples/ScanRulesets_CreateOrUpdate.json"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ScanRulesets"
+        ],
+        "description": "Deletes a scan ruleset",
+        "operationId": "ScanRulesets_Delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "scanRulesetName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-id"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-name"
+          },
+          {
+            "$ref": "#/parameters/api-version"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "202": {
+            "description": "Success"
+          },
+          "204": {
+            "description": "Success"
+          },
+          "default": {
+            "description": "An error response received from the Scanning Service",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponseModel"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "ScanRulesets_Delete": {
+            "$ref": "./examples/ScanRulesets_Delete.json"
+          }
+        }
+      }
+    },
+    "/scanrulesets": {
+      "get": {
+        "tags": [
+          "ScanRulesets"
+        ],
+        "description": "List scan rulesets in Data catalog",
+        "operationId": "ScanRulesets_ListAll",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$skipToken",
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-id"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-name"
+          },
+          {
+            "$ref": "#/parameters/api-version"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ScanRulesetList"
+            }
+          },
+          "default": {
+            "description": "An error response received from the Scanning Service",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponseModel"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "ScanRulesets_ListAll": {
+            "$ref": "./examples/ScanRulesets_ListAll.json"
+          }
+        }
+      }
+    },
+    "/datasources/{dataSourceName}/scans/{scanName}/triggers/{triggerName}": {
+      "get": {
+        "tags": [
+          "Triggers"
+        ],
+        "description": "Gets trigger information",
+        "operationId": "Triggers_GetTrigger",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "dataSourceName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "scanName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "triggerName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-id"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-name"
+          },
+          {
+            "$ref": "#/parameters/api-version"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Trigger"
+            }
+          },
+          "default": {
+            "description": "An error response received from the Scanning Service",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponseModel"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Triggers_GetTrigger": {
+            "$ref": "./examples/Triggers_GetTrigger.json"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Triggers"
+        ],
+        "description": "Creates an instance of a trigger",
+        "operationId": "Triggers_CreateTrigger",
+        "consumes": [
+          "application/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "dataSourceName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "scanName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "triggerName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-id"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-name"
+          },
+          {
+            "$ref": "#/parameters/api-version"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Trigger"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Trigger"
+            }
+          },
+          "201": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Trigger"
+            }
+          },
+          "default": {
+            "description": "An error response received from the Scanning Service",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponseModel"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Triggers_CreateTrigger": {
+            "$ref": "./examples/Triggers_CreateTrigger.json"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Triggers"
+        ],
+        "description": "Deletes the trigger associated with the scan",
+        "operationId": "Triggers_DeleteTrigger",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "dataSourceName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "scanName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "triggerName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-id"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-name"
+          },
+          {
+            "$ref": "#/parameters/api-version"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "202": {
+            "description": "Success"
+          },
+          "204": {
+            "description": "Success"
+          },
+          "default": {
+            "description": "An error response received from the Scanning Service",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponseModel"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Triggers_DeleteTrigger": {
+            "$ref": "./examples/Triggers_DeleteTrigger.json"
+          }
+        }
+      }
+    },
+    "/datasources/{dataSourceName}/scans/{scanName}/triggers": {
+      "get": {
+        "tags": [
+          "Triggers"
+        ],
+        "description": "List triggers in Scan",
+        "operationId": "Triggers_ListByScan",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "dataSourceName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "scanName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$skipToken",
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-id"
+          },
+          {
+            "$ref": "#/parameters/x-ms-account-name"
+          },
+          {
+            "$ref": "#/parameters/api-version"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/TriggerList"
+            }
+          },
+          "default": {
+            "description": "An error response received from the Scanning Service",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponseModel"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Triggers_ListByScan": {
+            "$ref": "./examples/Triggers_ListByScan.json"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "ProxyResource": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "readOnly": true
+        }
+      }
+    },
+    "ClassificationRule": {
+      "required": [
+        "kind"
+      ],
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ProxyResource"
+        }
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "System",
+            "Custom"
+          ],
+          "type": "string"
+        }
+      },
+      "discriminator": "kind"
+    },
+    "ErrorModel": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "target": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ErrorModel"
+          }
+        }
+      }
+    },
+    "ErrorResponseModel": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          ]
+        }
+      }
+    },
+    "ClassificationRuleList": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ClassificationRule"
+          }
+        },
+        "nextLink": {
+          "type": "string"
+        },
+        "count": {
+          "format": "int64",
+          "type": "integer"
+        }
+      }
+    },
+    "ClassificationRuleVersionAction": {
+      "type": "object",
+      "properties": {
+        "classificationAction": {
+          "type": "string"
+        }
+      }
+    },
+    "ErrorInfo": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "target": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ErrorInfo"
+          }
+        }
+      }
+    },
+    "OperationResponse": {
+      "type": "object",
+      "properties": {
+        "startTime": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "endTime": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "Accepted",
+            "InProgress",
+            "TransientFailure",
+            "Succeeded",
+            "Failed",
+            "Canceled"
+          ],
+          "type": "string"
+        },
+        "error": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/ErrorInfo"
+            }
+          ]
+        }
+      }
+    },
+    "DataSource": {
+      "required": [
+        "kind"
+      ],
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ProxyResource"
+        }
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "None",
+            "AdlsGen1",
+            "AdlsGen2",
+            "AmazonS3",
+            "AzureCosmosDb",
+            "AzureFileService",
+            "AzureSqlDatabase",
+            "AzureSqlDatabaseManagedInstance",
+            "AzureSqlDataWarehouse",
+            "AzureStorage",
+            "PowerBI"
+          ],
+          "type": "string"
+        }
+      },
+      "discriminator": "kind"
+    },
+    "DataSourceList": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DataSource"
+          }
+        },
+        "nextLink": {
+          "type": "string"
+        },
+        "count": {
+          "format": "int64",
+          "type": "integer"
+        }
+      }
+    },
+    "FilterProperties": {
+      "type": "object",
+      "properties": {
+        "excludeUriPrefixes": {
+          "uniqueItems": true,
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "includeUriPrefixes": {
+          "uniqueItems": true,
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "x-ms-external": true
+    },
+    "Filter": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ProxyResource"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/FilterProperties"
+            }
+          ],
+          "x-ms-client-flatten": true
+        }
+      }
+    },
+    "FilterList": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Filter"
+          }
+        },
+        "nextLink": {
+          "type": "string"
+        },
+        "count": {
+          "format": "int64",
+          "type": "integer"
+        }
+      }
+    },
+    "ScanRunProperties": {
+      "type": "object",
+      "properties": {
+        "scanLevel": {
+          "enum": [
+            "Full",
+            "Incremental"
+          ],
+          "type": "string"
+        },
+        "incrementalScanStartTime": {
+          "format": "date-time",
+          "type": "string"
+        }
+      }
+    },
+    "CancelScanRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        }
+      }
+    },
+    "ScanResult": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "readOnly": true
+        },
+        "status": {
+          "type": "string",
+          "readOnly": true
+        },
+        "assetsDiscovered": {
+          "format": "int64",
+          "type": "integer",
+          "readOnly": true
+        },
+        "assetsClassified": {
+          "format": "int64",
+          "type": "integer",
+          "readOnly": true
+        },
+        "startTime": {
+          "format": "date-time",
+          "type": "string",
+          "readOnly": true
+        },
+        "endTime": {
+          "format": "date-time",
+          "type": "string",
+          "readOnly": true
+        },
+        "errorMessage": {
+          "type": "string",
+          "readOnly": true
+        },
+        "error": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/ErrorModel"
+            }
+          ],
+          "readOnly": true
+        },
+        "runType": {
+          "type": "string",
+          "readOnly": true
+        }
+      }
+    },
+    "ScanHistoryList": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ScanResult"
+          }
+        },
+        "nextLink": {
+          "type": "string"
+        },
+        "count": {
+          "format": "int64",
+          "type": "integer"
+        }
+      }
+    },
+    "Scan": {
+      "required": [
+        "kind"
+      ],
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ProxyResource"
+        }
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "AdlsGen1Msi",
+            "AdlsGen1ServicePrincipal",
+            "AdlsGen2AccessKey",
+            "AdlsGen2Msi",
+            "AdlsGen2ServicePrincipal",
+            "AmazonS3RoleARN",
+            "AmazonS3AccessKey",
+            "AzureCosmosDbAccessKey",
+            "AzureFileServiceAccessKey",
+            "AzureSqlDatabaseConnectionString",
+            "AzureSqlDatabaseMsi",
+            "AzureSqlDatabaseServicePrincipal",
+            "AzureSqlDatabaseManagedInstanceConnectionString",
+            "AzureSqlDatabaseManagedInstanceMsi",
+            "AzureSqlDatabaseManagedInstanceServicePrincipal",
+            "AzureSqlDataWarehouseConnectionString",
+            "AzureSqlDataWarehouseMsi",
+            "AzureSqlDataWarehouseServicePrincipal",
+            "AzureStorageAccessKey",
+            "AzureStorageMsi",
+            "AzureStorageSas",
+            "AzureStorageServicePrincipal",
+            "PowerBIDelegated",
+            "PowerBIMsi"
+          ],
+          "type": "string"
+        }
+      },
+      "discriminator": "kind"
+    },
+    "ScanList": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Scan"
+          }
+        },
+        "nextLink": {
+          "type": "string"
+        },
+        "count": {
+          "format": "int64",
+          "type": "integer"
+        }
+      }
+    },
+    "ScanRuleset": {
+      "required": [
+        "kind"
+      ],
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ProxyResource"
+        }
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "None",
+            "AdlsGen1",
+            "AdlsGen2",
+            "AmazonS3",
+            "AzureCosmosDb",
+            "AzureFileService",
+            "AzureSqlDatabase",
+            "AzureSqlDatabaseManagedInstance",
+            "AzureSqlDataWarehouse",
+            "AzureStorage",
+            "PowerBI"
+          ],
+          "type": "string"
+        }
+      },
+      "discriminator": "kind"
+    },
+    "ScanRulesetList": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ScanRuleset"
+          }
+        },
+        "nextLink": {
+          "type": "string"
+        },
+        "count": {
+          "format": "int64",
+          "type": "integer"
+        }
+      }
+    },
+    "TriggerProperties": {
+      "type": "object",
+      "properties": {
+        "recurrenceInterval": {
+          "type": "string"
+        },
+        "timeoutInterval": {
+          "type": "string"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "type": "string",
+          "readOnly": true
+        },
+        "lastModifiedAt": {
+          "format": "date-time",
+          "type": "string",
+          "readOnly": true
+        },
+        "lastScheduled": {
+          "format": "date-time",
+          "type": "string",
+          "readOnly": true
+        },
+        "scanLevel": {
+          "enum": [
+            "Full",
+            "Incremental"
+          ],
+          "type": "string"
+        },
+        "incrementalScanStartTime": {
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "x-ms-external": true
+    },
+    "Trigger": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ProxyResource"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/TriggerProperties"
+            }
+          ],
+          "x-ms-client-flatten": true
+        }
+      }
+    },
+    "TriggerList": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Trigger"
+          }
+        },
+        "nextLink": {
+          "type": "string"
+        },
+        "count": {
+          "format": "int64",
+          "type": "integer"
+        }
+      }
+    },
+    "SystemClassificationRuleProperties": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "version": {
+          "format": "int32",
+          "type": "integer",
+          "readOnly": true
+        },
+        "classificationName": {
+          "type": "string"
+        },
+        "owner": {
+          "type": "string"
+        },
+        "ruleStatus": {
+          "enum": [
+            "Enabled",
+            "Disabled"
+          ],
+          "type": "string"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "type": "string",
+          "readOnly": true
+        },
+        "lastModifiedAt": {
+          "format": "date-time",
+          "type": "string",
+          "readOnly": true
+        }
+      },
+      "x-ms-external": true
+    },
+    "SystemClassificationRule": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ClassificationRule"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/SystemClassificationRuleProperties"
+            }
+          ],
+          "x-ms-client-flatten": true
+        }
+      },
+      "x-ms-discriminator-value": "System"
+    },
+    "ClassificationRulePattern": {
+      "required": [
+        "kind"
+      ],
+      "type": "object",
+      "properties": {
+        "kind": {
+          "enum": [
+            "Regex"
+          ],
+          "type": "string"
+        }
+      },
+      "discriminator": "kind"
+    },
+    "CustomClassificationRuleProperties": {
+      "type": "object",
+      "properties": {
+        "minimumDistinctMatchCount": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "minimumPercentageMatch": {
+          "format": "double",
+          "type": "number"
+        },
+        "classificationAction": {
+          "enum": [
+            "Keep",
+            "Delete"
+          ],
+          "type": "string",
+          "readOnly": true
+        },
+        "dataPatterns": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ClassificationRulePattern"
+          }
+        },
+        "columnPatterns": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ClassificationRulePattern"
+          }
+        },
+        "description": {
+          "type": "string"
+        },
+        "version": {
+          "format": "int32",
+          "type": "integer",
+          "readOnly": true
+        },
+        "classificationName": {
+          "type": "string"
+        },
+        "owner": {
+          "type": "string"
+        },
+        "ruleStatus": {
+          "enum": [
+            "Enabled",
+            "Disabled"
+          ],
+          "type": "string"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "type": "string",
+          "readOnly": true
+        },
+        "lastModifiedAt": {
+          "format": "date-time",
+          "type": "string",
+          "readOnly": true
+        }
+      },
+      "x-ms-external": true
+    },
+    "CustomClassificationRule": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ClassificationRule"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/CustomClassificationRuleProperties"
+            }
+          ],
+          "x-ms-client-flatten": true
+        }
+      },
+      "x-ms-discriminator-value": "Custom"
+    },
+    "RegexClassificationRulePattern": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ClassificationRulePattern"
+        }
+      ],
+      "properties": {
+        "pattern": {
+          "type": "string"
+        }
+      },
+      "x-ms-discriminator-value": "Regex"
+    },
+    "DataSourceProperties": {
+      "type": "object",
+      "properties": {
+        "createdAt": {
+          "format": "date-time",
+          "type": "string",
+          "readOnly": true
+        },
+        "lastModifiedAt": {
+          "format": "date-time",
+          "type": "string",
+          "readOnly": true
+        }
+      },
+      "x-ms-external": true
+    },
+    "AzureDataSourceProperties": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/DataSourceProperties"
+        }
+      ],
+      "properties": {
+        "resourceGroup": {
+          "type": "string"
+        },
+        "subscriptionId": {
+          "type": "string"
+        }
+      },
+      "x-ms-external": true
+    },
+    "AdlsGen1Properties": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/AzureDataSourceProperties"
+        }
+      ],
+      "properties": {
+        "endpoint": {
+          "type": "string"
+        }
+      },
+      "x-ms-external": true
+    },
+    "AdlsGen1DataSource": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/DataSource"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/AdlsGen1Properties"
+            }
+          ],
+          "x-ms-client-flatten": true
+        }
+      },
+      "x-ms-discriminator-value": "AdlsGen1"
+    },
+    "AdlsGen2Properties": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/AzureDataSourceProperties"
+        }
+      ],
+      "properties": {
+        "endpoint": {
+          "type": "string"
+        }
+      },
+      "x-ms-external": true
+    },
+    "AdlsGen2DataSource": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/DataSource"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/AdlsGen2Properties"
+            }
+          ],
+          "x-ms-client-flatten": true
+        }
+      },
+      "x-ms-discriminator-value": "AdlsGen2"
+    },
+    "AmazonS3Properties": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/DataSourceProperties"
+        }
+      ],
+      "properties": {
+        "serviceUrl": {
+          "type": "string"
+        },
+        "roleARN": {
+          "type": "string"
+        }
+      },
+      "x-ms-external": true
+    },
+    "AmazonS3DataSource": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/DataSource"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/AmazonS3Properties"
+            }
+          ],
+          "x-ms-client-flatten": true
+        }
+      },
+      "x-ms-discriminator-value": "AmazonS3"
+    },
+    "AzureCosmosDbProperties": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/AzureDataSourceProperties"
+        }
+      ],
+      "properties": {
+        "accountUri": {
+          "type": "string"
+        }
+      },
+      "x-ms-external": true
+    },
+    "AzureCosmosDbDataSource": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/DataSource"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/AzureCosmosDbProperties"
+            }
+          ],
+          "x-ms-client-flatten": true
+        }
+      },
+      "x-ms-discriminator-value": "AzureCosmosDb"
+    },
+    "AzureFileServiceProperties": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/AzureDataSourceProperties"
+        }
+      ],
+      "properties": {
+        "endpoint": {
+          "type": "string"
+        }
+      },
+      "x-ms-external": true
+    },
+    "AzureFileServiceDataSource": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/DataSource"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/AzureFileServiceProperties"
+            }
+          ],
+          "x-ms-client-flatten": true
+        }
+      },
+      "x-ms-discriminator-value": "AzureFileService"
+    },
+    "AzureSqlDatabaseProperties": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/AzureDataSourceProperties"
+        }
+      ],
+      "properties": {
+        "serverEndpoint": {
+          "type": "string"
+        }
+      },
+      "x-ms-external": true
+    },
+    "AzureSqlDatabaseDataSource": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/DataSource"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/AzureSqlDatabaseProperties"
+            }
+          ],
+          "x-ms-client-flatten": true
+        }
+      },
+      "x-ms-discriminator-value": "AzureSqlDatabase"
+    },
+    "AzureSqlDatabaseManagedInstanceProperties": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/AzureDataSourceProperties"
+        }
+      ],
+      "properties": {
+        "serverEndpoint": {
+          "type": "string"
+        }
+      },
+      "x-ms-external": true
+    },
+    "AzureSqlDatabaseManagedInstanceDataSource": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/DataSource"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/AzureSqlDatabaseManagedInstanceProperties"
+            }
+          ],
+          "x-ms-client-flatten": true
+        }
+      },
+      "x-ms-discriminator-value": "AzureSqlDatabaseManagedInstance"
+    },
+    "AzureSqlDataWarehouseProperties": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/AzureDataSourceProperties"
+        }
+      ],
+      "properties": {
+        "serverEndpoint": {
+          "type": "string"
+        }
+      },
+      "x-ms-external": true
+    },
+    "AzureSqlDataWarehouseDataSource": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/DataSource"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/AzureSqlDataWarehouseProperties"
+            }
+          ],
+          "x-ms-client-flatten": true
+        }
+      },
+      "x-ms-discriminator-value": "AzureSqlDataWarehouse"
+    },
+    "AzureStorageProperties": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/AzureDataSourceProperties"
+        }
+      ],
+      "properties": {
+        "endpoint": {
+          "type": "string"
+        }
+      },
+      "x-ms-external": true
+    },
+    "AzureStorageDataSource": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/DataSource"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/AzureStorageProperties"
+            }
+          ],
+          "x-ms-client-flatten": true
+        }
+      },
+      "x-ms-discriminator-value": "AzureStorage"
+    },
+    "PowerBIProperties": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/DataSourceProperties"
+        }
+      ],
+      "properties": {
+        "tenant": {
+          "type": "string"
+        }
+      },
+      "x-ms-external": true
+    },
+    "PowerBIDataSource": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/DataSource"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/PowerBIProperties"
+            }
+          ],
+          "x-ms-client-flatten": true
+        }
+      },
+      "x-ms-discriminator-value": "PowerBI"
+    },
+    "AdlsGen1ScanningRule": {
+      "type": "object",
+      "properties": {
+        "fileExtensions": {
+          "uniqueItems": true,
+          "type": "array",
+          "items": {
+            "enum": [
+              "AVRO",
+              "ORC",
+              "PARQUET",
+              "CSV",
+              "JSON",
+              "PSV",
+              "SSV",
+              "TSV",
+              "TXT",
+              "XML",
+              "DOC",
+              "DOCM",
+              "DOCX",
+              "DOT",
+              "ODP",
+              "ODS",
+              "ODT",
+              "PDF",
+              "POT",
+              "PPS",
+              "PPSX",
+              "PPT",
+              "PPTM",
+              "PPTX",
+              "XLC",
+              "XLS",
+              "XLSB",
+              "XLSM",
+              "XLSX",
+              "XLT"
+            ],
+            "type": "string"
+          }
+        }
+      }
+    },
+    "ScanRulesetProperties": {
+      "type": "object",
+      "properties": {
+        "createdAt": {
+          "format": "date-time",
+          "type": "string",
+          "readOnly": true
+        },
+        "lastModifiedAt": {
+          "format": "date-time",
+          "type": "string",
+          "readOnly": true
+        },
+        "excludedSystemClassifications": {
+          "uniqueItems": true,
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "includedCustomClassificationRuleNames": {
+          "uniqueItems": true,
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "x-ms-external": true
+    },
+    "AdlsGen1ScanRulesetProperties": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ScanRulesetProperties"
+        }
+      ],
+      "properties": {
+        "scanningRule": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/AdlsGen1ScanningRule"
+            }
+          ]
+        }
+      },
+      "x-ms-external": true
+    },
+    "AdlsGen1ScanRuleset": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ScanRuleset"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/AdlsGen1ScanRulesetProperties"
+            }
+          ],
+          "x-ms-client-flatten": true
+        }
+      },
+      "x-ms-discriminator-value": "AdlsGen1"
+    },
+    "AdlsGen2ScanningRule": {
+      "type": "object",
+      "properties": {
+        "fileExtensions": {
+          "uniqueItems": true,
+          "type": "array",
+          "items": {
+            "enum": [
+              "AVRO",
+              "ORC",
+              "PARQUET",
+              "CSV",
+              "JSON",
+              "PSV",
+              "SSV",
+              "TSV",
+              "TXT",
+              "XML",
+              "DOC",
+              "DOCM",
+              "DOCX",
+              "DOT",
+              "ODP",
+              "ODS",
+              "ODT",
+              "PDF",
+              "POT",
+              "PPS",
+              "PPSX",
+              "PPT",
+              "PPTM",
+              "PPTX",
+              "XLC",
+              "XLS",
+              "XLSB",
+              "XLSM",
+              "XLSX",
+              "XLT"
+            ],
+            "type": "string"
+          }
+        }
+      }
+    },
+    "AdlsGen2ScanRulesetProperties": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ScanRulesetProperties"
+        }
+      ],
+      "properties": {
+        "scanningRule": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/AdlsGen2ScanningRule"
+            }
+          ]
+        }
+      },
+      "x-ms-external": true
+    },
+    "AdlsGen2ScanRuleset": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ScanRuleset"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/AdlsGen2ScanRulesetProperties"
+            }
+          ],
+          "x-ms-client-flatten": true
+        }
+      },
+      "x-ms-discriminator-value": "AdlsGen2"
+    },
+    "AmazonS3ScanningRule": {
+      "type": "object",
+      "properties": {
+        "fileExtensions": {
+          "uniqueItems": true,
+          "type": "array",
+          "items": {
+            "enum": [
+              "AVRO",
+              "ORC",
+              "PARQUET",
+              "CSV",
+              "JSON",
+              "PSV",
+              "SSV",
+              "TSV",
+              "TXT",
+              "XML",
+              "DOC",
+              "DOCM",
+              "DOCX",
+              "DOT",
+              "ODP",
+              "ODS",
+              "ODT",
+              "PDF",
+              "POT",
+              "PPS",
+              "PPSX",
+              "PPT",
+              "PPTM",
+              "PPTX",
+              "XLC",
+              "XLS",
+              "XLSB",
+              "XLSM",
+              "XLSX",
+              "XLT"
+            ],
+            "type": "string"
+          }
+        }
+      }
+    },
+    "AmazonS3ScanRulesetProperties": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ScanRulesetProperties"
+        }
+      ],
+      "properties": {
+        "scanningRule": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/AmazonS3ScanningRule"
+            }
+          ]
+        }
+      },
+      "x-ms-external": true
+    },
+    "AmazonS3ScanRuleset": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ScanRuleset"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/AmazonS3ScanRulesetProperties"
+            }
+          ],
+          "x-ms-client-flatten": true
+        }
+      },
+      "x-ms-discriminator-value": "AmazonS3"
+    },
+    "AzureCosmosDbScanRulesetProperties": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ScanRulesetProperties"
+        }
+      ],
+      "x-ms-external": true
+    },
+    "AzureCosmosDbScanRuleset": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ScanRuleset"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/AzureCosmosDbScanRulesetProperties"
+            }
+          ],
+          "x-ms-client-flatten": true
+        }
+      },
+      "x-ms-discriminator-value": "AzureCosmosDb"
+    },
+    "AzureFileServiceScanningRule": {
+      "type": "object",
+      "properties": {
+        "fileExtensions": {
+          "uniqueItems": true,
+          "type": "array",
+          "items": {
+            "enum": [
+              "AVRO",
+              "ORC",
+              "PARQUET",
+              "CSV",
+              "JSON",
+              "PSV",
+              "SSV",
+              "TSV",
+              "TXT",
+              "XML",
+              "DOC",
+              "DOCM",
+              "DOCX",
+              "DOT",
+              "ODP",
+              "ODS",
+              "ODT",
+              "PDF",
+              "POT",
+              "PPS",
+              "PPSX",
+              "PPT",
+              "PPTM",
+              "PPTX",
+              "XLC",
+              "XLS",
+              "XLSB",
+              "XLSM",
+              "XLSX",
+              "XLT"
+            ],
+            "type": "string"
+          }
+        }
+      }
+    },
+    "AzureFileServiceScanRulesetProperties": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ScanRulesetProperties"
+        }
+      ],
+      "properties": {
+        "scanningRule": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/AzureFileServiceScanningRule"
+            }
+          ]
+        }
+      },
+      "x-ms-external": true
+    },
+    "AzureFileServiceScanRuleset": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ScanRuleset"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/AzureFileServiceScanRulesetProperties"
+            }
+          ],
+          "x-ms-client-flatten": true
+        }
+      },
+      "x-ms-discriminator-value": "AzureFileService"
+    },
+    "AzureSqlDatabaseScanRulesetProperties": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ScanRulesetProperties"
+        }
+      ],
+      "x-ms-external": true
+    },
+    "AzureSqlDatabaseScanRuleset": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ScanRuleset"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/AzureSqlDatabaseScanRulesetProperties"
+            }
+          ],
+          "x-ms-client-flatten": true
+        }
+      },
+      "x-ms-discriminator-value": "AzureSqlDatabase"
+    },
+    "AzureSqlDatabaseManagedInstanceScanRulesetProperties": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ScanRulesetProperties"
+        }
+      ],
+      "x-ms-external": true
+    },
+    "AzureSqlDatabaseManagedInstanceScanRuleset": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ScanRuleset"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/AzureSqlDatabaseManagedInstanceScanRulesetProperties"
+            }
+          ],
+          "x-ms-client-flatten": true
+        }
+      },
+      "x-ms-discriminator-value": "AzureSqlDatabaseManagedInstance"
+    },
+    "AzureSqlDataWarehouseScanRulesetProperties": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ScanRulesetProperties"
+        }
+      ],
+      "x-ms-external": true
+    },
+    "AzureSqlDataWarehouseScanRuleset": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ScanRuleset"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/AzureSqlDataWarehouseScanRulesetProperties"
+            }
+          ],
+          "x-ms-client-flatten": true
+        }
+      },
+      "x-ms-discriminator-value": "AzureSqlDataWarehouse"
+    },
+    "AzureStorageScanningRule": {
+      "type": "object",
+      "properties": {
+        "fileExtensions": {
+          "uniqueItems": true,
+          "type": "array",
+          "items": {
+            "enum": [
+              "AVRO",
+              "ORC",
+              "PARQUET",
+              "CSV",
+              "JSON",
+              "PSV",
+              "SSV",
+              "TSV",
+              "TXT",
+              "XML",
+              "DOC",
+              "DOCM",
+              "DOCX",
+              "DOT",
+              "ODP",
+              "ODS",
+              "ODT",
+              "PDF",
+              "POT",
+              "PPS",
+              "PPSX",
+              "PPT",
+              "PPTM",
+              "PPTX",
+              "XLC",
+              "XLS",
+              "XLSB",
+              "XLSM",
+              "XLSX",
+              "XLT"
+            ],
+            "type": "string"
+          }
+        }
+      }
+    },
+    "AzureStorageScanRulesetProperties": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ScanRulesetProperties"
+        }
+      ],
+      "properties": {
+        "scanningRule": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/AzureStorageScanningRule"
+            }
+          ]
+        }
+      },
+      "x-ms-external": true
+    },
+    "AzureStorageScanRuleset": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ScanRuleset"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/AzureStorageScanRulesetProperties"
+            }
+          ],
+          "x-ms-client-flatten": true
+        }
+      },
+      "x-ms-discriminator-value": "AzureStorage"
+    },
+    "PowerBIScanRulesetProperties": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ScanRulesetProperties"
+        }
+      ],
+      "x-ms-external": true
+    },
+    "PowerBIScanRuleset": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ScanRuleset"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/PowerBIScanRulesetProperties"
+            }
+          ],
+          "x-ms-client-flatten": true
+        }
+      },
+      "x-ms-discriminator-value": "PowerBI"
+    },
+    "ScanProperties": {
+      "type": "object",
+      "properties": {
+        "scanRulesetName": {
+          "type": "string"
+        },
+        "workers": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "type": "string",
+          "readOnly": true
+        },
+        "lastModifiedAt": {
+          "format": "date-time",
+          "type": "string",
+          "readOnly": true
+        }
+      },
+      "x-ms-external": true
+    },
+    "AdlsGen1MsiScanProperties": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ScanProperties"
+        }
+      ],
+      "x-ms-external": true
+    },
+    "AdlsGen1MsiScan": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Scan"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/AdlsGen1MsiScanProperties"
+            }
+          ],
+          "x-ms-client-flatten": true
+        }
+      },
+      "x-ms-discriminator-value": "AdlsGen1Msi"
+    },
+    "AdlsGen1ServicePrincipalScanProperties": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ScanProperties"
+        }
+      ],
+      "properties": {
+        "tenantId": {
+          "type": "string"
+        },
+        "servicePrincipalId": {
+          "type": "string"
+        },
+        "servicePrincipalKey": {
+          "type": "string"
+        }
+      },
+      "x-ms-external": true
+    },
+    "AdlsGen1ServicePrincipalScan": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Scan"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/AdlsGen1ServicePrincipalScanProperties"
+            }
+          ],
+          "x-ms-client-flatten": true
+        }
+      },
+      "x-ms-discriminator-value": "AdlsGen1ServicePrincipal"
+    },
+    "AdlsGen2AccessKeyScanProperties": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ScanProperties"
+        }
+      ],
+      "properties": {
+        "accessKey": {
+          "type": "string"
+        }
+      },
+      "x-ms-external": true
+    },
+    "AdlsGen2AccessKeyScan": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Scan"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/AdlsGen2AccessKeyScanProperties"
+            }
+          ],
+          "x-ms-client-flatten": true
+        }
+      },
+      "x-ms-discriminator-value": "AdlsGen2AccessKey"
+    },
+    "AdlsGen2MsiScanProperties": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ScanProperties"
+        }
+      ],
+      "x-ms-external": true
+    },
+    "AdlsGen2MsiScan": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Scan"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/AdlsGen2MsiScanProperties"
+            }
+          ],
+          "x-ms-client-flatten": true
+        }
+      },
+      "x-ms-discriminator-value": "AdlsGen2Msi"
+    },
+    "AdlsGen2ServicePrincipalScanProperties": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ScanProperties"
+        }
+      ],
+      "properties": {
+        "tenantId": {
+          "type": "string"
+        },
+        "servicePrincipalId": {
+          "type": "string"
+        },
+        "servicePrincipalKey": {
+          "type": "string"
+        }
+      },
+      "x-ms-external": true
+    },
+    "AdlsGen2ServicePrincipalScan": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Scan"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/AdlsGen2ServicePrincipalScanProperties"
+            }
+          ],
+          "x-ms-client-flatten": true
+        }
+      },
+      "x-ms-discriminator-value": "AdlsGen2ServicePrincipal"
+    },
+    "AmazonS3RoleARNScanProperties": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ScanProperties"
+        }
+      ],
+      "x-ms-external": true
+    },
+    "AmazonS3RoleARNScan": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Scan"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/AmazonS3RoleARNScanProperties"
+            }
+          ],
+          "x-ms-client-flatten": true
+        }
+      },
+      "x-ms-discriminator-value": "AmazonS3RoleARN"
+    },
+    "AmazonS3AccessKeyScanProperties": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ScanProperties"
+        }
+      ],
+      "properties": {
+        "accessKey": {
+          "type": "string"
+        }
+      },
+      "x-ms-external": true
+    },
+    "AmazonS3AccessKeyScan": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Scan"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/AmazonS3AccessKeyScanProperties"
+            }
+          ],
+          "x-ms-client-flatten": true
+        }
+      },
+      "x-ms-discriminator-value": "AmazonS3AccessKey"
+    },
+    "AzureCosmosDbAccessKeyScanProperties": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ScanProperties"
+        }
+      ],
+      "properties": {
+        "accessKey": {
+          "type": "string"
+        },
+        "databaseName": {
+          "type": "string"
+        }
+      },
+      "x-ms-external": true
+    },
+    "AzureCosmosDbAccessKeyScan": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Scan"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/AzureCosmosDbAccessKeyScanProperties"
+            }
+          ],
+          "x-ms-client-flatten": true
+        }
+      },
+      "x-ms-discriminator-value": "AzureCosmosDbAccessKey"
+    },
+    "AzureFileServiceAccessKeyScanProperties": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ScanProperties"
+        }
+      ],
+      "properties": {
+        "accessKey": {
+          "type": "string"
+        },
+        "shareName": {
+          "type": "string"
+        }
+      },
+      "x-ms-external": true
+    },
+    "AzureFileServiceAccessKeyScan": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Scan"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/AzureFileServiceAccessKeyScanProperties"
+            }
+          ],
+          "x-ms-client-flatten": true
+        }
+      },
+      "x-ms-discriminator-value": "AzureFileServiceAccessKey"
+    },
+    "AzureSqlScanProperties": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ScanProperties"
+        }
+      ],
+      "properties": {
+        "serverEndpoint": {
+          "type": "string"
+        },
+        "databaseName": {
+          "type": "string"
+        }
+      },
+      "x-ms-external": true
+    },
+    "AzureSqlUsernamePasswordScanProperties": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/AzureSqlScanProperties"
+        }
+      ],
+      "properties": {
+        "username": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "x-ms-external": true
+    },
+    "AzureSqlDatabaseConnectionStringScanProperties": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/AzureSqlUsernamePasswordScanProperties"
+        }
+      ],
+      "x-ms-external": true
+    },
+    "AzureSqlDatabaseConnectionStringScan": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Scan"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/AzureSqlDatabaseConnectionStringScanProperties"
+            }
+          ],
+          "x-ms-client-flatten": true
+        }
+      },
+      "x-ms-discriminator-value": "AzureSqlDatabaseConnectionString"
+    },
+    "AzureSqlDatabaseMsiScanProperties": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/AzureSqlScanProperties"
+        }
+      ],
+      "x-ms-external": true
+    },
+    "AzureSqlDatabaseMsiScan": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Scan"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/AzureSqlDatabaseMsiScanProperties"
+            }
+          ],
+          "x-ms-client-flatten": true
+        }
+      },
+      "x-ms-discriminator-value": "AzureSqlDatabaseMsi"
+    },
+    "AzureSqlServicePrincipalScanProperties": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/AzureSqlScanProperties"
+        }
+      ],
+      "properties": {
+        "tenantId": {
+          "type": "string"
+        },
+        "servicePrincipalId": {
+          "type": "string"
+        },
+        "servicePrincipalKey": {
+          "type": "string"
+        }
+      },
+      "x-ms-external": true
+    },
+    "AzureSqlDatabaseServicePrincipalScanProperties": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/AzureSqlServicePrincipalScanProperties"
+        }
+      ],
+      "x-ms-external": true
+    },
+    "AzureSqlDatabaseServicePrincipalScan": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Scan"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/AzureSqlDatabaseServicePrincipalScanProperties"
+            }
+          ],
+          "x-ms-client-flatten": true
+        }
+      },
+      "x-ms-discriminator-value": "AzureSqlDatabaseServicePrincipal"
+    },
+    "AzureSqlDatabaseManagedInstanceConnectionStringScanProperties": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/AzureSqlUsernamePasswordScanProperties"
+        }
+      ],
+      "x-ms-external": true
+    },
+    "AzureSqlDatabaseManagedInstanceConnectionStringScan": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Scan"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/AzureSqlDatabaseManagedInstanceConnectionStringScanProperties"
+            }
+          ],
+          "x-ms-client-flatten": true
+        }
+      },
+      "x-ms-discriminator-value": "AzureSqlDatabaseManagedInstanceConnectionString"
+    },
+    "AzureSqlDatabaseManagedInstanceMsiScanProperties": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/AzureSqlScanProperties"
+        }
+      ],
+      "x-ms-external": true
+    },
+    "AzureSqlDatabaseManagedInstanceMsiScan": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Scan"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/AzureSqlDatabaseManagedInstanceMsiScanProperties"
+            }
+          ],
+          "x-ms-client-flatten": true
+        }
+      },
+      "x-ms-discriminator-value": "AzureSqlDatabaseManagedInstanceMsi"
+    },
+    "AzureSqlDatabaseManagedInstanceServicePrincipalScanProperties": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/AzureSqlServicePrincipalScanProperties"
+        }
+      ],
+      "x-ms-external": true
+    },
+    "AzureSqlDatabaseManagedInstanceServicePrincipalScan": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Scan"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/AzureSqlDatabaseManagedInstanceServicePrincipalScanProperties"
+            }
+          ],
+          "x-ms-client-flatten": true
+        }
+      },
+      "x-ms-discriminator-value": "AzureSqlDatabaseManagedInstanceServicePrincipal"
+    },
+    "AzureSqlDataWarehouseConnectionStringScanProperties": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/AzureSqlUsernamePasswordScanProperties"
+        }
+      ],
+      "x-ms-external": true
+    },
+    "AzureSqlDataWarehouseConnectionStringScan": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Scan"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/AzureSqlDataWarehouseConnectionStringScanProperties"
+            }
+          ],
+          "x-ms-client-flatten": true
+        }
+      },
+      "x-ms-discriminator-value": "AzureSqlDataWarehouseConnectionString"
+    },
+    "AzureSqlDataWarehouseMsiScanProperties": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/AzureSqlScanProperties"
+        }
+      ],
+      "x-ms-external": true
+    },
+    "AzureSqlDataWarehouseMsiScan": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Scan"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/AzureSqlDataWarehouseMsiScanProperties"
+            }
+          ],
+          "x-ms-client-flatten": true
+        }
+      },
+      "x-ms-discriminator-value": "AzureSqlDataWarehouseMsi"
+    },
+    "AzureSqlDataWarehouseServicePrincipalScanProperties": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/AzureSqlServicePrincipalScanProperties"
+        }
+      ],
+      "x-ms-external": true
+    },
+    "AzureSqlDataWarehouseServicePrincipalScan": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Scan"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/AzureSqlDataWarehouseServicePrincipalScanProperties"
+            }
+          ],
+          "x-ms-client-flatten": true
+        }
+      },
+      "x-ms-discriminator-value": "AzureSqlDataWarehouseServicePrincipal"
+    },
+    "AzureStorageAccessKeyScanProperties": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ScanProperties"
+        }
+      ],
+      "properties": {
+        "accessKey": {
+          "type": "string"
+        }
+      },
+      "x-ms-external": true
+    },
+    "AzureStorageAccessKeyScan": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Scan"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/AzureStorageAccessKeyScanProperties"
+            }
+          ],
+          "x-ms-client-flatten": true
+        }
+      },
+      "x-ms-discriminator-value": "AzureStorageAccessKey"
+    },
+    "AzureStorageMsiScanProperties": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ScanProperties"
+        }
+      ],
+      "x-ms-external": true
+    },
+    "AzureStorageMsiScan": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Scan"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/AzureStorageMsiScanProperties"
+            }
+          ],
+          "x-ms-client-flatten": true
+        }
+      },
+      "x-ms-discriminator-value": "AzureStorageMsi"
+    },
+    "AzureStorageSasScanProperties": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ScanProperties"
+        }
+      ],
+      "properties": {
+        "sasUri": {
+          "type": "string"
+        }
+      },
+      "x-ms-external": true
+    },
+    "AzureStorageSasScan": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Scan"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/AzureStorageSasScanProperties"
+            }
+          ],
+          "x-ms-client-flatten": true
+        }
+      },
+      "x-ms-discriminator-value": "AzureStorageSas"
+    },
+    "AzureStorageServicePrincipalScanProperties": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ScanProperties"
+        }
+      ],
+      "properties": {
+        "tenantId": {
+          "type": "string"
+        },
+        "servicePrincipalId": {
+          "type": "string"
+        },
+        "servicePrincipalKey": {
+          "type": "string"
+        }
+      },
+      "x-ms-external": true
+    },
+    "AzureStorageServicePrincipalScan": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Scan"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/AzureStorageServicePrincipalScanProperties"
+            }
+          ],
+          "x-ms-client-flatten": true
+        }
+      },
+      "x-ms-discriminator-value": "AzureStorageServicePrincipal"
+    },
+    "PowerBIDelegatedScanProperties": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ScanProperties"
+        }
+      ],
+      "properties": {
+        "tenant": {
+          "type": "string"
+        },
+        "authenticationType": {
+          "type": "string"
+        },
+        "clientId": {
+          "type": "string"
+        },
+        "userName": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "x-ms-external": true
+    },
+    "PowerBIDelegatedScan": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Scan"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/PowerBIDelegatedScanProperties"
+            }
+          ],
+          "x-ms-client-flatten": true
+        }
+      },
+      "x-ms-discriminator-value": "PowerBIDelegated"
+    },
+    "PowerBIMsiScanProperties": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ScanProperties"
+        }
+      ],
+      "x-ms-external": true
+    },
+    "PowerBIMsiScan": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Scan"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/PowerBIMsiScanProperties"
+            }
+          ],
+          "x-ms-client-flatten": true
+        }
+      },
+      "x-ms-discriminator-value": "PowerBIMsi"
+    }
+  },
+  "parameters": {
+    "x-ms-account-name": {
+      "in": "header",
+      "name": "x-ms-account-name",
+      "description": "The Account Id",
+      "type": "string",
+      "x-ms-client-name": "AccountName"
+    },
+    "x-ms-account-id": {
+      "in": "header",
+      "name": "x-ms-account-id",
+      "description": "The Account Id",
+      "type": "string",
+      "x-ms-client-name": "AccountId"
+    },
+    "api-version": {
+      "in": "query",
+      "name": "api-version",
+      "description": "The api version to use.",
+      "required": true,
+      "type": "string",
+      "x-ms-client-name": "ApiVersion"
+    }
+  },
+  "securityDefinitions": {
+    "azure_auth": {
+      "type": "oauth2",
+      "flow": "implicit",
+      "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+      "scopes": {
+        "user_impersonation": "impersonate your user account"
+      },
+      "description": "Azure Active Directory OAuth2 Flow."
+    }
+  }
+}

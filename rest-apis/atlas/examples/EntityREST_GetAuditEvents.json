@@ -1,0 +1,62 @@
+{
+    "parameters": {
+        "guid": "5cf8a9e5-c9fd-abe0-2e8c-d40024263dcb",
+        "count": "10",
+        "startKey": "testKey"
+    },
+    "responses": {
+        "200": {
+            "headers": {
+                "Access-Control-Allow-Headers": "authorization,content-type,x-xsrf-header,x-ms-client-request-id",
+                "Access-Control-Allow-Methods": "GET,OPTIONS,HEAD,PUT,POST,DELETE,PATCH",
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Expose-Headers": "x-ms-request-id",
+                "Content-Type": "application/json; charset=UTF-8",
+                "Server": "Jetty(9.3.14.v20161028)",
+                "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+                "Transfer-Encoding": "chunked",
+                "X-Content-Type-Options": "nosniff",
+                "X-Frame-Options": "DENY",
+                "x-ms-request-id": "97930d08-0a53-4bb5-a352-08e7761bf20a",
+                "X-XSS-Protection": "1; mode=block"
+            },
+            "body": {
+                "referredEntities": {},
+                "entity": {
+                    "typeName": "column",
+                    "attributes": {
+                        "owner": null,
+                        "qualifiedName": "adl://adlsgary.azuredatalakestore.net/123/1/DP_TFS/CBT/Extensions/DTTP.targets#:xml/Project/Target/XmlPeek/@XmlInputPath",
+                        "name": "~XmlInputPath",
+                        "description": null,
+                        "type": "string"
+                    },
+                    "guid": "5cf8a9e5-c9fd-abe0-2e8c-d40024263dcb",
+                    "status": "ACTIVE",
+                    "createdBy": "ServiceAdmin",
+                    "updatedBy": "ServiceAdmin",
+                    "createTime": 1553072455110,
+                    "updateTime": 1553072455110,
+                    "version": 0,
+                    "relationshipAttributes": {
+                        "schema": [],
+                        "inputToProcesses": [],
+                        "composeSchema": {
+                            "guid": "cc6652ae-dc6d-90c9-1899-252eabc0e929",
+                            "typeName": "tabular_schema",
+                            "displayText": "tabular_schema",
+                            "relationshipGuid": "5a4510d4-57d0-467c-888f-4b61df42702b",
+                            "relationshipStatus": "ACTIVE",
+                            "relationshipAttributes": {
+                                "typeName": "tabular_schema_columns"
+                            }
+                        },
+                        "meanings": [],
+                        "outputFromProcesses": [],
+                        "tabular_schema": null
+                    }
+                }
+            }
+        }
+    }
+}

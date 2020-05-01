@@ -4,3 +4,4 @@ obj/
 bin/
 *.*.user
 *.Development.json
+*.ps1

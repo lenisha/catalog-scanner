@@ -114,4 +114,41 @@ to Find out DataCatalog MSI to add to Azure SQL Admin group, navigate in portal 
 
 
 
+## Code Generation
 
+Code generation from ALTLAS API Swagger package was done using autorest
+
+```
+autorest --input-file=./api/data-plane/preview/datacataloggen2.json --csharp --output-folder=Csharp_DataCatalogGen2 --namespace=DataCatalogGen2 --add-credentials
+
+autorest --input-file=./scanningService.json --csharp --output-folder=Csharp_ScannerService --namespace=ScannerBabylonService --add-credential
+
+```
+
+## Changes done in Atlas API  
+
+To get some additional fields mapped to Classes from Json , we did following changes in Atlas model files
+
+- added object to `JsonSearchFilter`
+
+```java
+public JsonSearchFilter(object p)
+```
+
+- changed `JsonSearchResultValue` highlists to match the resulted json from Ilist to just `JsonSearchHighlights` object
+
+```java
+public JsonSearchResultValue(JsonSearchHighlights searchhighlights...)
+
+[JsonProperty(PropertyName = "@search.highlights")]
+ public JsonSearchHighlights Searchhighlights { get; set; }
+```
+
+- added to `JsonSearchResultValue` field `AllClassifications`
+
+```java
+public JsonSearchResultValue(..., IList<string> allClassifications = default(IList<string>) )
+
+[JsonProperty(PropertyName = "allClassifications")]
+public IList<string> AllClassifications { get; set; }
+```

@@ -1,0 +1,54 @@
+{
+    "parameters": {
+        "termGuid": "6f420602-48e8-ae0d-042f-1518ff310330",
+        "partialUpdates": {
+            "name": "test3 - partial",
+            "shortDescription": "short desc 3 - partial",
+            "longDescription": "long desc 3 - partial"
+        }
+        
+    },
+    "responses": {
+        "200": {
+            "headers": {
+                "Access-Control-Allow-Headers": "authorization,content-type,x-xsrf-header,x-ms-client-request-id",
+                "Access-Control-Allow-Methods": "GET,OPTIONS,HEAD,PUT,POST,DELETE,PATCH",
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Expose-Headers": "x-ms-request-id",
+                "Content-Type": "application/json; charset=UTF-8",
+                "Server": "Jetty(9.3.14.v20161028)",
+                "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+                "Transfer-Encoding": "chunked",
+                "X-Content-Type-Options": "nosniff",
+                "X-Frame-Options": "DENY",
+                "x-ms-request-id": "97930d08-0a53-4bb5-a352-08e7761bf20a",
+                "X-XSS-Protection": "1; mode=block"
+            },
+            "body": {
+                "guid": "6f420602-48e8-ae0d-042f-1518ff310330",
+                "qualifiedName": "test3@Default category 2",
+                "name": "test3 - partial",
+                "shortDescription": "short desc 3 - partial",
+                "longDescription": "long desc 3 - partial",
+                "anchor": {
+                    "glossaryGuid": "c0c54153-13d1-1608-13af-43457cdf1234",
+                    "relationGuid": "575f9299-6677-4352-8779-416f297f4e5e"
+                },
+                "seeAlso": [
+                    {
+                        "termGuid": "b720166d-f98a-74bd-116c-1c9db56935c8",
+                        "relationGuid": "64594e7b-e8c1-4cc4-b290-7f466eb6f1db",
+                        "displayText": "test4"
+                    }
+                ],
+                "synonyms": [
+                    {
+                        "termGuid": "b720166d-f98a-74bd-116c-1c9db56935c8",
+                        "relationGuid": "087e80c6-6600-46e9-8218-364034397f23",
+                        "displayText": "test4"
+                    }
+                ]
+            }
+        }
+    }
+}

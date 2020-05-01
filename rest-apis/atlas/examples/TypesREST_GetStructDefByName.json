@@ -1,0 +1,59 @@
+{
+    "parameters": {
+        "name": "hive_order"
+    },
+    "responses": {
+        "200": {
+            "headers": {
+                "Access-Control-Allow-Headers": "authorization,content-type,x-xsrf-header,x-ms-client-request-id",
+                "Access-Control-Allow-Methods": "GET,OPTIONS,HEAD,PUT,POST,DELETE,PATCH",
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Expose-Headers": "x-ms-request-id",
+                "Content-Type": "application/json; charset=UTF-8",
+                "Server": "Jetty(9.3.14.v20161028)",
+                "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+                "Transfer-Encoding": "chunked",
+                "X-Content-Type-Options": "nosniff",
+                "X-Frame-Options": "DENY",
+                "x-ms-request-id": "97930d08-0a53-4bb5-a352-08e7761bf20a",
+                "X-XSS-Protection": "1; mode=block"
+            },
+            "body": {
+                "category": "STRUCT",
+                "guid": "f1571b6e-ad08-4040-a9a7-c30ed935d437",
+                "createdBy": "vsts",
+                "updatedBy": "vsts",
+                "createTime": 1553065968145,
+                "updateTime": 1553065968145,
+                "version": 1,
+                "name": "hive_order",
+                "description": "hive_order",
+                "typeVersion": "1.0",
+                "attributeDefs": [
+                    {
+                        "name": "order",
+                        "typeName": "int",
+                        "isOptional": false,
+                        "cardinality": "SINGLE",
+                        "valuesMinCount": 1,
+                        "valuesMaxCount": 1,
+                        "isUnique": false,
+                        "isIndexable": false,
+                        "includeInNotification": false
+                    },
+                    {
+                        "name": "col",
+                        "typeName": "string",
+                        "isOptional": false,
+                        "cardinality": "SINGLE",
+                        "valuesMinCount": 1,
+                        "valuesMaxCount": 1,
+                        "isUnique": false,
+                        "isIndexable": false,
+                        "includeInNotification": false
+                    }
+                ]
+            }
+        }
+    }
+}
