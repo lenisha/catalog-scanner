@@ -1,0 +1,24 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "name": {
+            "type": "String"
+        },
+        "location": {
+            "type": "String"
+        }
+    },
+    "resources": [
+        {
+            "type": "Microsoft.ProjectBabylon/accounts",
+            "apiVersion": "2019-10-01-preview",
+            "name": "[parameters('name')]",
+            "location": "[parameters('location')]",
+            "tags": {},
+            "identity": {
+                "type": "SystemAssigned"
+            }
+        }
+    ]
+}
