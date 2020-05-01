@@ -105,6 +105,18 @@ NAME         SCHEDULE      SUSPEND   ACTIVE   LAST SCHEDULE   AGE
 catalogscantrigger   * */1 * * *   False     0        26s             6m31s
 ```
 
+## JSON requests
+Babylon API follows a CRUD scheme to create and update DataSources and Scans
+
+- This sample first creates Datasource
+![docs](./docs/datasource.png)
+
+- Then creates Scan
+![docs](./docs/scanjson.png)
+
+- and Creates Trigger to schedule scans every week
+![docs](./docs/triggerjson.png)
+
 ## Verify in Portal
 
 Launch Babylon portal `https://https://web.babylon.azure.com/resource/<catalog>/`  verify datasource pointing to Azure SQL database and the scans scheduled
