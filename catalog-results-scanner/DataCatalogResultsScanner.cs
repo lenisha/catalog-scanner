@@ -13,8 +13,7 @@ namespace catalog_scanner
 {
     class DataCatalogResultsScanner
     {
-        private static string BASE_URI = "https://contoso.catalog.azure.com/api/atlas";
-
+       
         ILogger _Logger;
         IConfiguration _Config;
 
@@ -47,7 +46,9 @@ namespace catalog_scanner
             var svcClientCreds = new TokenCredentials(getToken(), "Bearer");
             var client = new DataCatalogClient(svcClientCreds);
             // Overwrite base URI if needed
-            client.BaseUri = new System.Uri(BASE_URI);
+            string baseUrl = _Config.GetValue<String>("AtlasUrl") + "/api/atlas";
+
+            client.BaseUri = new System.Uri(baseUrl);
             return client;
         }
 
