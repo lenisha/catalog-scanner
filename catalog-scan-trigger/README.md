@@ -1,4 +1,4 @@
-## Detect Database Classifications using Atlas API and Azure Gen2 DataCatalog
+## Setup AzureDB Scanning using Babylon DataCatalog API
 
 Catalog Scan Trigger is application that sets up scanning AzureSQL datasources with scheduled (or run manually) scans.
 
@@ -32,7 +32,6 @@ if running in K8S with AAD Pod Identity enabled and remove ClientID/ClientSecret
 
 Add SP  or Managed Application Id to Catalog Administrators
 ![docs](./docs/sp.png)
-
 
 
 And run
@@ -108,8 +107,7 @@ catalogscantrigger   * */1 * * *   False     0        26s             6m31s
 
 ## Verify in Portal
 
-Launch Babylon portal `https://https://web.babylon.azure.com/resource/<catalog>/`  verify datasource pointing to Azure SQL database
-and the scans scheduled
+Launch Babylon portal `https://https://web.babylon.azure.com/resource/<catalog>/`  verify datasource pointing to Azure SQL database and the scans scheduled
 
 ![docs](./docs/scans.png)
 

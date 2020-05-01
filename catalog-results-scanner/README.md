@@ -1,6 +1,6 @@
-## Detect Database Classifications using Atlas API and Azure Gen2 DataCatalog
+## Detect Database Classifications using Atlas API and Azure Babylon DataCatalog
 
-Catalog Scanner is application that queries ADC Gen2 catalog to find classified columns for the datasources with scheduled (or run manually) scans.
+Catalog Scanner is application that queries Babylon catalog using Atlas API to find classified columns for the datasources with scheduled (or run manually) scans.
 These columns could then  be reported to Log Analytics for further reporting.
 
 ## Settings
@@ -22,9 +22,8 @@ if running in K8S with AAD Pod Identity enabled
 "UseMI": "true",
 ```
 
-Add SP  or MI App Id to DataCatalog Contributors
+Add SP  or MI App Id to DataCatalog Administrators
 ![docs](./docs/sp.png)
-
 
 
 And run
@@ -95,24 +94,6 @@ NAME         SCHEDULE      SUSPEND   ACTIVE   LAST SCHEDULE   AGE
 catalogscanner   * */1 * * *   False     0        26s             6m31s
 ```
 
-## Onboard DataSource
-
-Navigate to ADC management portal `https://adc.azure.com/`  and setup new datasource pointing to Azure SQL database
-
-![docs](./docs/newds.png)
-
-Setup new scan, using DataCatalog ManagedIdentity (should be granted access to Azure SQL) or SQL authentication
-
-![docs](./docs/scan.png)
-
-setup schedule and rulest to be used by scan
-![docs](./docs/scanschedule.png)
-![docs](./docs/ruleset.png)
-
-to Find out DataCatalog MSI to add to Azure SQL Admin group, navigate in portal to DataCatalog properties
-![docs](./docs/AdcMI.png)
-
-
 
 ## Code Generation
 
@@ -121,11 +102,36 @@ Code generation from ALTLAS API Swagger package was done using autorest
 ```
 autorest --input-file=./api/data-plane/preview/datacataloggen2.json --csharp --output-folder=Csharp_DataCatalogGen2 --namespace=DataCatalogGen2 --add-credentials
 
-autorest --input-file=./scanningService.json --csharp --output-folder=Csharp_ScannerService --namespace=ScannerBabylonService --add-credential
-
 ```
 
-## Changes done in Atlas API  
+## JSON Searches examples
+This sample uses Advanced search capability of the Atlas API
+
+First by looking all tables under same AzureSQL Server that has classifications (see postman collection)
+
+```json
+{
+    "keywords": "testmetoday.database.windows.net",
+    "limit": 30,
+    "filter": {
+        "add": [
+            {
+                "typeName": "azure_sql_table",
+                "includeSubTypes": true
+            }
+        ]
+    }
+}
+```
+
+![docs](./docs/searchtables.png)
+
+In next step we iterate over columns inside each table retrieved using Entity API call with table GUID
+
+![docs](./docs/columnclass.png)
+
+
+## Changes done to generated Atlas API classes 
 
 To get some additional fields mapped to Classes from Json , we did following changes in Atlas model files
 
@@ -152,3 +158,20 @@ public JsonSearchResultValue(..., IList<string> allClassifications = default(ILi
 [JsonProperty(PropertyName = "allClassifications")]
 public IList<string> AllClassifications { get; set; }
 ```
+
+## Manual DataSource setup ( could be done using Babylon API example)
+
+Launch Babylon portal `https://https://web.babylon.azure.com/resource/<catalog>/`   and setup new datasource pointing to Azure SQL database
+
+![docs](./docs/newds.png)
+
+Setup new scan, using DataCatalog ManagedIdentity (should be granted access to Azure SQL) or SQL authentication
+
+![docs](./docs/scan.png)
+
+setup schedule and rulest to be used by scan
+![docs](./docs/scanschedule.png)
+![docs](./docs/ruleset.png)
+
+to Find out DataCatalog MSI to add to Azure SQL Admin group, navigate in portal to DataCatalog properties
+![docs](./docs/AdcMI.png)
