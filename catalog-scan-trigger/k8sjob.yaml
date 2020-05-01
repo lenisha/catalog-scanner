@@ -1,0 +1,31 @@
+﻿apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: catalogscantrigger
+spec:
+  schedule: "* */1 * * *"
+  jobTemplate:
+    spec:
+      completions: 1  #at least one success
+      backoffLimit: 3 #retries
+      template:
+        metadata:
+          labels:
+            aadpodidbinding: odbcidentity
+        spec:
+          containers:
+          - name: catalogscantrigger
+            image: lenisha/catalogscantrigger
+            volumeMounts:
+            - name: config
+              mountPath: /app/appsettings.json
+              subPath: appsettings.Development.json
+          restartPolicy: OnFailure
+          securityContext:
+            runAsUser: 1000
+            runAsGroup: 3000
+          ## kubectl create configmap catalogscantrigger-settings --from-file appsettings.Development.json
+          volumes:
+          - name: config 
+            configMap:
+              name: catalogscantrigger-settings   
