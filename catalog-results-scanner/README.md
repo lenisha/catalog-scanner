@@ -6,8 +6,9 @@ These columns could then  be reported to Log Analytics for further reporting.
 ## Settings
 
 To run locally , set `appsettings.json` configuration with details for Service Princial and Azure SQL
-```
+``` json
 {
+  "AtlasUrl":"https://<catalog>.catalog.babylon.azure.com",
   "TenantId": "<SP Tenant Id>",
   "ClientId": "<SP Client ID>",
   "ClientSecret": "<SP Secret>",
