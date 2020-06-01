@@ -132,7 +132,7 @@ namespace catalog_scanner
                      { "grant_type", "client_credentials" },
                      { "client_id", clientId },
                      { "client_secret", clientSecret },
-                     { "resource", "https://management.core.windows.net/" }
+                     { "resource", "https://projectbabylon.azure.net" }
                      };
 
             var content = new FormUrlEncodedContent(values);
